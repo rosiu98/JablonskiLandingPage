@@ -1,0 +1,15 @@
+.active {
+  position: relative;
+  //   border-bottom: 2px solid $blue;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 70%;
+    height: 2px;
+    background-color: $blue;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
