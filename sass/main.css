@@ -182,6 +182,12 @@ p {
   margin-right: 4rem;
 }
 
+@media (max-width: 768px) {
+  .header__nav__links {
+    display: none;
+  }
+}
+
 .header__nav__links a {
   color: #3a3a3a;
   font-size: 2rem;
@@ -204,9 +210,23 @@ p {
           align-items: center;
 }
 
+@media (max-width: 1024px) {
+  .header__content__container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 .header__content__main {
   min-width: 350px;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .header__content__main {
+    width: 100%;
+    min-width: unset;
+  }
 }
 
 .header__content__main--title {
@@ -223,6 +243,12 @@ p {
 
 .header__content__image img {
   width: 120%;
+}
+
+@media (max-width: 768px) {
+  .header__content__image img {
+    width: 100%;
+  }
 }
 
 .wave img {

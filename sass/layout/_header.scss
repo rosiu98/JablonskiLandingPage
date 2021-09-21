@@ -50,6 +50,10 @@
       gap: 4rem;
       margin-right: 4rem;
 
+      @include responsive(tablet) {
+        display: none;
+      }
+
       & a {
         color: $dark;
         font-size: 2rem;
@@ -67,11 +71,20 @@
       grid-template-columns: 1fr 1fr;
       justify-items: center;
       align-items: center;
+
+      @include responsive(laptop) {
+        grid-template-columns: 1fr;
+      }
     }
 
     &__main {
       min-width: 350px;
       position: relative;
+
+      @include responsive(tablet) {
+        width: 100%;
+        min-width: unset;
+      }
 
       &--title {
         margin-bottom: 2rem;
@@ -91,6 +104,10 @@
       //   right: -10%;
       img {
         width: 120%;
+
+        @include responsive(tablet) {
+          width: 100%;
+        }
       }
     }
   }
