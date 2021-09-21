@@ -1,11 +1,10 @@
 .header {
-  position: sticky;
+  position: relative;
   z-index: 999;
   top: 0;
   width: 100%;
   margin: 0 auto;
   left: 0;
-  padding: 4rem 0;
   align-items: center;
   transition: 0.5s ease;
   overflow: hidden;
@@ -34,6 +33,7 @@
     display: flex;
     max-width: 144rem;
     width: 80%;
+    padding: 4rem 0;
     position: relative;
     z-index: 999;
     justify-content: space-between;
@@ -89,7 +89,7 @@
       //   position: relative;
       //   right: -10%;
       img {
-        width: 150%;
+        width: 120%;
       }
     }
   }

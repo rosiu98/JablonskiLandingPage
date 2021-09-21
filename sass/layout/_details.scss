@@ -1,0 +1,43 @@
+.details {
+  height: 100vh;
+  background-image: url("/images/wave-details.svg");
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  &__container {
+    padding-top: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    max-width: 144rem;
+    width: 80%;
+    margin: 0 auto;
+
+    &__images {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      gap: 5rem;
+      row-gap: 0;
+      align-items: baseline;
+      justify-content: center;
+
+      & figure {
+        height: auto !important;
+        background-color: white;
+        padding: 1rem;
+        border-radius: 3rem;
+        border: 2px solid rgba(243, 243, 243, 1);
+        box-shadow: 14px 19px 30px 2px rgba(0, 0, 0, 0.25);
+        position: relative;
+        z-index: 99;
+
+        img {
+          width: 100%;
+          //   height: 100%;
+        }
+      }
+    }
+  }
+}

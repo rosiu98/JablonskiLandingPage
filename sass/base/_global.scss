@@ -31,8 +31,13 @@ a {
   color: #fff;
 }
 
-main {
-  max-width: 144rem;
-  width: 80%;
-  margin: 0 auto;
+// main {
+//   // background-color: $light-grey;
+// }
+
+figure {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
