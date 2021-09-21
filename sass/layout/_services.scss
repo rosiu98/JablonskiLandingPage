@@ -1,6 +1,5 @@
 .services {
   margin: 0 auto;
-  margin-top: 25rem;
   max-width: 144rem;
   width: 80%;
 
@@ -32,6 +31,10 @@
       top: -6.2rem;
       left: 0;
       z-index: -1;
+
+      @include responsive(tablet) {
+        display: none;
+      }
     }
 
     &::before {
@@ -41,6 +44,10 @@
       bottom: -6.2rem;
       right: 0;
       z-index: -1;
+
+      @include responsive(laptop) {
+        display: none;
+      }
     }
 
     &__box {
