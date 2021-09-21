@@ -15,6 +15,7 @@
   </head>
 
   <body>
+    <div class="overlay hidden"></div>
     <header class="header">
       <nav class="header__nav">
         <div class="header__nav__logo">
@@ -150,7 +151,7 @@
               <li><img src="./images/check-icon.png" alt="check-icon" /><p>Lokalizacja: Kraków</p></li>
             </ul>
           </div>
-          <div class="services__container__box__button"><button class="button-primary">
+          <div class="services__container__box__button"><button class="button-primary show-modal">
             ZOBACZ WIĘCEJ
           </button>
         </div>
@@ -169,7 +170,7 @@
               <li><img src="./images/check-icon.png" alt="check-icon" /><p>Lokalizacja: Kraków</p></li>
             </ul>
           </div>
-          <div class="services__container__box__button"><button class="button-primary">
+          <div class="services__container__box__button"><button class="button-primary show-modal">
             ZOBACZ WIĘCEJ
           </button>
         </div>
@@ -188,7 +189,7 @@
               <li><img src="./images/check-icon.png" alt="check-icon" /><p>Lokalizacja: Kraków</p></li>
             </ul>
           </div>
-          <div class="services__container__box__button"><button class="button-primary">
+          <div class="services__container__box__button"><button class="button-primary show-modal">
             ZOBACZ WIĘCEJ
           </button>
         </div>
@@ -348,9 +349,36 @@
         </div>
       </div>
     </footer>
-    <!-- <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy54ZNaySUbbdf7Ch1kr3_T2iltnRzH4c&callback=initMap">
-</script> -->
+
+
+    <div class="modal hidden">
+      <!-- <button class="close-modal">&times;</button>
+      <div class="modal__main">
+        <div class="modal__main__image">
+          <img src="./images/kategoria-b.jpg" alt="kategoria-b">
+        </div>
+        <div class="modal__main__title">
+          <h1 class="h1-primary">Kategoria B</h1>
+        </div>
+        
+        <div class="modal__main__text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div class="modal__main__list">
+          <ul>
+            <li><span>✅</span>Ukończone 18 lat</li>
+          <li><span>✅</span>Badania lekarskie</li>
+          <li><span>✅</span>Profil Kandydata na Kierowce(PKK)</li>
+          </ul>
+        </div>
+
+
+      </div> -->
+  </div>
+      
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
       <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy54ZNaySUbbdf7Ch1kr3_T2iltnRzH4c&callback=initMap&libraries=geometry,places&v=weekly"
