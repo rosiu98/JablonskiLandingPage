@@ -1,4 +1,4 @@
-.active {
+.activeLink {
   position: relative;
   //   border-bottom: 2px solid $blue;
 
@@ -12,4 +12,31 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+}
+
+@include responsive(tablet) {
+  .header__nav__links.active {
+    z-index: 888;
+    position: fixed;
+    background: #fff;
+    top: 0;
+    right: 0;
+    width: 380px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.15);
+    transition: 0.3s ease;
+    margin-right: 0;
+  }
+}
+
+.menu-btn.active {
+  z-index: 999;
+  background: url("../images/close.svg") no-repeat;
+  background-size: 25px;
+  background-position: center;
+  transition: 0.3s ease;
 }

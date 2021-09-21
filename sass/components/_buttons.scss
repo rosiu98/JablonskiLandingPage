@@ -10,3 +10,17 @@
   font-size: 1.8rem;
   font-weight: bold;
 }
+
+.menu-btn {
+  @include responsive(tablet) {
+    position: absolute;
+    background: url("../images/btn-menu.svg") no-repeat;
+    background-size: 30px;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    right: 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+}
