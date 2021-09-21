@@ -10,7 +10,7 @@
   overflow: hidden;
 
   &::after {
-    content: url("/images/header-top.svg");
+    content: url("../images/header-top.svg");
     position: absolute;
     width: 100%;
     height: auto;
@@ -71,6 +71,7 @@
 
     &__main {
       min-width: 350px;
+      position: relative;
 
       &--title {
         margin-bottom: 2rem;
