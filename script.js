@@ -38,6 +38,28 @@ const modalContent = [
   },
 ];
 
+let lastScrollTop = 0;
+const navbar = document.querySelector(".header__nav");
+window.addEventListener("scroll", function () {
+  let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop) {
+    navbar.style.top = "-200px";
+  } else {
+    navbar.style.top = "0";
+  }
+
+  if (window.scrollY > 0) {
+    navbar.style.background = "yellow";
+  } else {
+    navbar.style.background = "none";
+  }
+
+  console.log(window.scrollY);
+
+  lastScrollTop = scrollTop;
+});
+
 const openMenu = function () {
   navigation.classList.toggle("active");
   menu.classList.toggle("active");
