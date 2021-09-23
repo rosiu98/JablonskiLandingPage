@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -21,19 +22,10 @@ li {
   list-style: none;
 }
 
-// li:hover {
-//   border-bottom: 1px solid $blue;
-//   transition: 0.2s linear;
-// }
-
 a {
   text-decoration: none;
   color: #fff;
 }
-
-// main {
-//   // background-color: $light-grey;
-// }
 
 figure {
   width: 100%;
@@ -42,24 +34,20 @@ figure {
   display: block;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
   border-radius: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: $violet;
   border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #1d8ad5;
 }

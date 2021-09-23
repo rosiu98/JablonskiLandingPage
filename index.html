@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="sass/main.css" />
-    <link rel="stylesheet" href="stylando.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous"></script>
@@ -15,6 +14,10 @@
   </head>
 
   <body>
+    <div class="scrollToTop-btn">
+      <img src="./images/arrow-top.svg" alt="arrow-top"> 
+    </div>
+
     <div class="overlay hidden"></div>
     <header class="header">
       <nav class="header__nav">
@@ -23,10 +26,10 @@
         </div>
         <div class="menu-btn"></div>
         <div class="header__nav__links">
-          <a class="activeLink" href="/">O Mnie</a>
-          <a href="/">Usługi</a>
-          <a href="/">Opinie</a>
-          <a href="/">Kontakt</a>
+          <a  href="#main">O Mnie</a>
+          <a href="#services">Usługi</a>
+          <a href="#reviews">Opinie</a>
+          <a href="#footer">Kontakt</a>
         </div>
       </nav>
 
@@ -54,14 +57,14 @@
       </div>
     </header>
 
-    <main >
+    <main id='main' >
 <div class="wave">
     <img src='./images/header-bottom.svg' alt="wave">
 </div>
         <section class="about">
          
         <div class="about__container">
-            <div class="about__container__photo--1">
+            <div class="about__container__photo--1 reveal">
                 <figure>
                     <img src="./images/about-photo-1.png" alt="about-photo-1">
 
@@ -103,7 +106,7 @@
       </section>
       <section class="details">
           <div class="details__container">
-              <div class="details__container__images">
+              <div class="details__container__images reveal">
                   <figure>
                       <img src="./images/details-photo1.png" alt="photo1">
                   </figure>
@@ -131,13 +134,13 @@
       </section>
     </main>
 
-    <section class="services">
-      <div class="services__title">
+    <section class="services" id='services'>
+      <div class="services__title reveal">
         <h1 class="h1-primary">Moje Usługi</h1>
         <p>Niczemu się nie dziwię  dzięki 25 letniemu doświadczeńiu.</p>
       </div>
 
-      <div class="services__container">
+      <div class="services__container reveal">
         <div class="services__container__box">
           <div class="services__container__box__main">
             <img src="./images/box3.png" alt="Kategoria B">
@@ -197,13 +200,13 @@
       </div>
     </section>
 
-    <section class="reviews">
+    <section class="reviews" id='reviews'>
 
-      <div class="reviews__title">
+      <div class="reviews__title reveal">
       <h1 class="h1-primary">Opinie Kursantów</h1>
       </div>
     
-    <div class="testimonials-carousel-wrap">
+    <div class="testimonials-carousel-wrap reveal">
       <div class="listing-carousel-button listing-carousel-button-next"><img src="./images/arrow-right.png" alt="arrow-right"></i></div>
       <div class="listing-carousel-button listing-carousel-button-prev"><img src="./images/arrow-left.png" alt="arrow-left"></i></div>
       <div class="testimonials-carousel">
@@ -313,8 +316,8 @@
       <div class="tc-pagination"></div>
     </section>
 
-    <footer>
-      <div class="footer">
+    <footer id='footer'>
+      <div class="footer reveal">
         <div class="footer__about">
           <div class="footer__about__title">
             <img src="./images/logo-white.svg" alt="logo-white">
@@ -352,31 +355,6 @@
 
 
     <div class="modal hidden">
-      <!-- <button class="close-modal">&times;</button>
-      <div class="modal__main">
-        <div class="modal__main__image">
-          <img src="./images/kategoria-b.jpg" alt="kategoria-b">
-        </div>
-        <div class="modal__main__title">
-          <h1 class="h1-primary">Kategoria B</h1>
-        </div>
-        
-        <div class="modal__main__text">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <div class="modal__main__list">
-          <ul>
-            <li><span>✅</span>Ukończone 18 lat</li>
-          <li><span>✅</span>Badania lekarskie</li>
-          <li><span>✅</span>Profil Kandydata na Kierowce(PKK)</li>
-          </ul>
-        </div>
-
-
-      </div> -->
   </div>
       
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>

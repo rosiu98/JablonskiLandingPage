@@ -38,6 +38,36 @@ const modalContent = [
   },
 ];
 
+//javascript for scroll to top button
+const scrollBtn = document.querySelector(".scrollToTop-btn");
+
+window.addEventListener("scroll", function () {
+  scrollBtn.classList.toggle("show", window.scrollY > 500);
+});
+
+//javascript for scroll back to top on on click scroll-to-top button
+scrollBtn.addEventListener("click", () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
+
+//javascript for reveal website elements on scroll
+window.addEventListener("scroll", reveal);
+
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var revealTop = reveals[i].getBoundingClientRect().top;
+    var revealPoint = 50;
+
+    if (revealTop < windowHeight - revealPoint) {
+      reveals[i].classList.add("active");
+    }
+  }
+}
+
 let lastScrollTop = 0;
 const navbar = document.querySelector(".header__nav");
 window.addEventListener("scroll", function () {
@@ -50,12 +80,12 @@ window.addEventListener("scroll", function () {
   }
 
   if (window.scrollY > 0) {
-    navbar.style.background = "yellow";
+    navbar.style.background = "white";
+    navbar.style.boxShadow = "5px 10px 20px rgba(0, 0, 0, 0.25)";
   } else {
     navbar.style.background = "none";
+    navbar.style.boxShadow = "none";
   }
-
-  console.log(window.scrollY);
 
   lastScrollTop = scrollTop;
 });
@@ -117,12 +147,8 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
       .addEventListener("click", closeModal);
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
-
-    // add text
   });
 }
-
-// btnCloseModal.addEventListener("click", closeModal);
 
 overlay.addEventListener("click", closeModal);
 

@@ -13,14 +13,40 @@
 
 .menu-btn {
   @include responsive(tablet) {
-    position: absolute;
     background: url("../images/btn-menu.svg") no-repeat;
     background-size: 30px;
     background-position: center;
     width: 40px;
     height: 40px;
-    right: 0;
     cursor: pointer;
     transition: 0.3s ease;
   }
+}
+.scrollToTop-btn {
+  z-index: 999;
+  position: fixed;
+  background: #3a6cf4;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  right: 0;
+  bottom: 10px;
+  font-size: 22px;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 3px;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease-in;
+}
+
+.scrollToTop-btn.show {
+  right: 20px;
+  opacity: 1 !important;
+  pointer-events: auto;
 }
