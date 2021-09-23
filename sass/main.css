@@ -307,6 +307,8 @@ p {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
 }
 
 .modal__main__title {
@@ -760,6 +762,10 @@ p {
 
 .details__container__images figure img {
   width: 100%;
+}
+
+.details__container__content__title {
+  margin-bottom: 2rem;
 }
 
 .services {

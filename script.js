@@ -1,6 +1,7 @@
 let map;
 
 const menu = document.querySelector(".menu-btn");
+const linkMenu = document.querySelectorAll(".link");
 const navigation = document.querySelector(".header__nav__links");
 const menuActive = document.querySelector(".menu-btn active");
 const modal = document.querySelector(".modal");
@@ -68,6 +69,7 @@ function reveal() {
   }
 }
 
+// navbar show on scroll to top and hide on down
 let lastScrollTop = 0;
 const navbar = document.querySelector(".header__nav");
 window.addEventListener("scroll", function () {
@@ -94,6 +96,11 @@ const openMenu = function () {
   navigation.classList.toggle("active");
   menu.classList.toggle("active");
 };
+
+// on click on menu link remove navigation active class
+linkMenu.forEach((link) =>
+  link.addEventListener("click", () => navigation.classList.remove("active"))
+);
 
 menu.addEventListener("click", openMenu);
 
@@ -151,9 +158,10 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
 }
 
 overlay.addEventListener("click", closeModal);
+// overlay.addEventListener("click", );
 
 document.addEventListener("keydown", function (event) {
-  // console.log(event.key) Pokazuje ,ktory klawisz naciskamy
+  // Pokazuje ,ktory klawisz naciskamy
   if (event.key === "Escape" && !modal.classList.contains("hidden")) {
     closeModal();
   }
