@@ -24,7 +24,7 @@
     </div>
 
     <div class="overlay hidden"></div>
-    <header class="header">
+    <header class="header" id='header'>
       <nav class="header__nav">
         <div class="header__nav__logo">
           <img src="./images/Logo.svg" alt="Logo" />
@@ -52,11 +52,15 @@
               </p>
             </div>
             <div class="header__content__main--button">
-              <button class="button-primary">Zaczynajmy!</button>
+              <button class="button-primary"> <a href="#main">Zaczynajmy!</a></button>
             </div>
           </div>
           <div class="header__content__image">
-            <img src="./images/yaris.png" alt="main-photo" />
+            <picture>
+              <source type="image/webp" srcset="images/yaris.webp">
+              <source type="image/png" srcset="images/yaris.png">
+              <img src="images/yaris.png" alt='Samochod nauka jazdy'>
+            </picture>
           </div>
         </div>
       </div>
@@ -68,16 +72,23 @@
 </div>
         <section class="about">
          
-        <div class="about__container">
+        <div class="about__container reveal">
             <div class="about__container__photo--1 reveal">
                 <figure>
-                    <img src="./images/about-photo-1.png" alt="about-photo-1">
-
+                    <picture>
+                      <source type="image/webp" srcset="images/about-photo-1.webp">
+                      <source type="image/png" srcset="images/about-photo-1.png">
+                      <img src="images/about-photo-1.png" alt='Kierownica samochodu do nauki'>
+                    </picture>
                 </figure>
             </div>
             <div class="about__container__photo--2">
                 <figure>
-                <img src="./images/about-photo-2.png" alt="about-photo-2">
+                <picture>
+                  <source type="image/webp" srcset="images/about-photo-2.webp">
+                  <source type="image/png" srcset="images/about-photo-2.png">
+                  <img src="images/about-photo-2.png" alt='Samochod nauczyciela prawa jazdy'>
+                </picture>
                 </figure>
             </div>
             <div class="about__container__content">
@@ -148,7 +159,11 @@
       <div class="services__container reveal">
         <div class="services__container__box">
           <div class="services__container__box__main">
-            <img src="./images/box3.png" alt="Kategoria B">
+            <picture>
+              <source type="image/webp" srcset="images/box3.webp">
+              <source type="image/png" srcset="images/box3.png">
+              <img src="images/box3.png" alt='Kategoria B'>
+            </picture>
             <h2>Kategoria B</h2>
           </div>
           <div class="services__container__box__list">
@@ -167,8 +182,12 @@
 
         <div class="services__container__box">
           <div class="services__container__box__main">
-            <img src="./images/box2.png" alt="Kategoria B">
-            <h2>Kategoria B</h2>
+            <picture>
+              <source type="image/webp" srcset="images/box2.webp">
+              <source type="image/png" srcset="images/box2.png">
+              <img src="images/box2.png" alt='Kategoria D'>
+            </picture>
+            <h2>Kategoria D</h2>
           </div>
           <div class="services__container__box__list">
             <ul>
@@ -186,8 +205,12 @@
 
         <div class="services__container__box">
           <div class="services__container__box__main">
-            <img src="./images/box1.png" alt="Kategoria B">
-            <h2>Kategoria B</h2>
+            <picture>
+              <source type="image/webp" srcset="images/box1.webp">
+              <source type="image/png" srcset="images/box1.png">
+              <img src="images/box1.png" alt='Kategoria C + E'>
+            </picture>
+            <h2>Kategoria C + E</h2>
           </div>
           <div class="services__container__box__list">
             <ul>
@@ -340,7 +363,7 @@
             </div>
             <div class="footer__about__links__content">
               <a href='#header'>Głowna</a>
-              <a href="#about">O Mnie</a>
+              <a href="#main">O Mnie</a>
               <a href="#services">Usługi</a>
               <a href="#reviews">Opinie</a>
             </div>

@@ -691,6 +691,13 @@ p {
       -ms-flex-align: center;
           align-items: center;
   gap: 1rem;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.about__container__content__list li:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .details {
