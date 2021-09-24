@@ -99,7 +99,10 @@ const openMenu = function () {
 
 // on click on menu link remove navigation active class
 linkMenu.forEach((link) =>
-  link.addEventListener("click", () => navigation.classList.remove("active"))
+  link.addEventListener("click", () => {
+    navigation.classList.remove("active");
+    menu.classList.remove("active");
+  })
 );
 
 menu.addEventListener("click", openMenu);
