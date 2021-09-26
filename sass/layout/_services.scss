@@ -51,8 +51,16 @@
     }
 
     &__box {
+      display: flex;
+      flex-direction: column;
+      height: 610px;
+      width: 350px;
       background-color: #f9f9f9;
       box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.25);
+
+      @include responsive(tablet) {
+        height: auto;
+      }
 
       &__main {
         position: relative;
@@ -63,16 +71,14 @@
 
         & h2 {
           font-weight: 600;
-          font-size: 2.5rem;
+          font-size: 2rem;
           position: absolute;
           bottom: 0;
           left: 0;
-          //   margin-left: 1rem;
           padding: 0.5rem;
           color: $white;
           background: rgba(0, 0, 0, 0.5);
           border-radius: 0px 10px 0px 0px;
-          font-family: -webkit-pictograph;
         }
         & img {
           width: 100%;
@@ -80,7 +86,11 @@
         }
       }
       &__list {
-        margin-bottom: 8rem;
+        margin-bottom: auto;
+
+        @include responsive(tablet) {
+          margin-bottom: 7.5rem;
+        }
 
         & ul {
           margin-left: 2rem;

@@ -617,8 +617,8 @@ p {
   -ms-grid-row-span: 2;
   grid-row: 2 / 4;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / 4;
+  -ms-grid-column-span: 4;
+  grid-column: 1 / 5;
   margin-top: 4rem;
   padding-left: 2rem;
   margin-bottom: 5rem;
@@ -662,10 +662,16 @@ p {
   width: 80%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about__container__content__text p {
     width: 100%;
   }
+}
+
+.about__container__content__list h3 {
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 .about__container__content__list ul {
@@ -712,8 +718,8 @@ p {
   padding-top: 10rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 0.4fr 0.6fr;
+      grid-template-columns: 0.4fr 0.6fr;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -773,6 +779,24 @@ p {
 
 .details__container__content__title {
   margin-bottom: 2rem;
+}
+
+.details__container__content__text ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  row-gap: 3rem;
+}
+
+.details__container__content__text li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
 }
 
 .services {
@@ -838,9 +862,24 @@ p {
 }
 
 .services__container__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 610px;
+  width: 350px;
   background-color: #f9f9f9;
   -webkit-box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.25);
           box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .services__container__box {
+    height: auto;
+  }
 }
 
 .services__container__box__main {
@@ -853,7 +892,7 @@ p {
 
 .services__container__box__main h2 {
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: 2rem;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -861,7 +900,6 @@ p {
   color: white;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 0px 10px 0px 0px;
-  font-family: -webkit-pictograph;
 }
 
 .services__container__box__main img {
@@ -871,7 +909,13 @@ p {
 }
 
 .services__container__box__list {
-  margin-bottom: 8rem;
+  margin-bottom: auto;
+}
+
+@media (max-width: 768px) {
+  .services__container__box__list {
+    margin-bottom: 7.5rem;
+  }
 }
 
 .services__container__box__list ul {
@@ -1285,6 +1329,11 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   gap: 1.5rem;
+}
+
+.footer__info__links a {
+  font-size: 1.8rem;
+  color: white;
 }
 
 .footer__location__title {
