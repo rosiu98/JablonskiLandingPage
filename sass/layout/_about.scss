@@ -99,7 +99,7 @@
     &__content {
       grid-area: content;
       grid-row: 2 / 4;
-      grid-column: 1 / 4;
+      grid-column: 1 / 5;
       margin-top: 4rem;
       padding-left: 2rem;
       margin-bottom: 5rem;
@@ -135,13 +135,20 @@
         p {
           width: 80%;
 
-          @include responsive(tablet) {
+          @include responsive(laptop) {
             width: 100%;
           }
         }
       }
 
       &__list {
+
+        & h3 {
+          font-weight: 500;
+          font-size: 1.8rem;
+          margin-bottom: 2rem;
+        }
+
         & ul {
           display: grid;
           grid-template-columns: 1fr 1fr;

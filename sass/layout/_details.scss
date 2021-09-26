@@ -8,7 +8,7 @@
   &__container {
     padding-top: 10rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.4fr 0.6fr;
     justify-content: center;
     align-items: center;
     max-width: 144rem;
@@ -26,7 +26,6 @@
       gap: 5rem;
       row-gap: 0;
       align-items: baseline;
-      // justify-content: center;
 
       @include responsive(laptop) {
         grid-row: 2;
@@ -51,6 +50,19 @@
     }
     &__content__title {
       margin-bottom: 2rem;
+    }
+
+    &__content__text {
+      & ul {
+          display: grid;
+          grid-template-columns: 1fr;
+          row-gap: 1.5rem;
+        }
+
+        & li {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
     }
   }
 }
