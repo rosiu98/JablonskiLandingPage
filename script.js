@@ -11,8 +11,8 @@ const btnsOpenModal = document.querySelectorAll(".show-modal");
 const modalContent = [
   {
     image: "./images/box3.png",
-    title: "Kategoria B",
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor incididunt ut labore et dolore magna aliqua.",
+    title: "Kierowca Doskonały",
+    text: "Zdecydowales sie zostac kierowca? świetnie, krok po kroku, od podstaw zmienisz sie w pewnego siebie automobiliste",
     list: [
       "Ukończone 18 lat",
       "Badania lekarskie",
@@ -22,8 +22,8 @@ const modalContent = [
 
   {
     image: "./images/box2.png",
-    title: "Kategoria D",
-    text: "Lorem ipsum consectetur adipisicing elit, sed do tempor incididunt ut labore et dolore.",
+    title: "Jedziemy z tym koksem",
+    text: "Jesteś pasjonatem samochodów i nie możesz doczekać się aby spełnić swoje marzenie? W takim razie polecam intensywny kurs. W 1,5 miesięcy zostaniesz kozakiem na drodze",
     list: [
       "Ukończone 18 lat",
       "Badania lekarskie",
@@ -33,9 +33,11 @@ const modalContent = [
 
   {
     image: "./images/box1.png",
-    title: "Kategoria C + E",
-    text: "Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore et dolore magna aliqua.",
-    list: ["Ukończone 18 lat", "Badania lekarskie"],
+    title: "Nie jestem nowaczykiem”",
+    text: "Masz podstawowe umiejętności kierowania pojazdem, ale nie doszło do egzaminu? Razem wypełnimy luki i wyćwiczimy  technikę do perfekcji",
+    list: ["Ukończone 18 lat",
+          "Badania lekarskie",
+          "Profil Kandydata na Kierowce(PKK)"],
   },
 ];
 
