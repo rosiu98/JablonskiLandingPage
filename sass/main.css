@@ -617,8 +617,8 @@ p {
   -ms-grid-row-span: 2;
   grid-row: 2 / 4;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-column: 1 / 5;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
   margin-top: 4rem;
   padding-left: 2rem;
   margin-bottom: 5rem;
