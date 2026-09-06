@@ -955,7 +955,7 @@ p {
 }
 
 .reviews {
-  margin-bottom: 25rem;
+  margin-bottom: 15rem;
 }
 
 .reviews__title {
@@ -1470,5 +1470,153 @@ footer {
     .obszar-dzialania .wrap { width: 88%; gap: 4rem; }
     .obszar-dzialania figure { border-radius: 2rem; }
     .obszar-dzialania figure img { border-radius: 1.4rem; }
+  }
+
+  .call-to-action {
+    font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+    background: linear-gradient(120deg, #132D77, #1A54F0);
+    padding: 10rem 0 15rem;
+    color: #ffffff;
+  }
+  .call-to-action * { box-sizing: border-box; margin: 0; }
+
+  .call-to-action .wrap {
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    justify-content: center;
+    align-items: center;
+    max-width: 144rem;
+    width: 80%;
+    margin: 0 auto;
+    gap: 5rem;
+  }
+
+  .call-to-action .content { padding-right: 2rem; }
+
+  .call-to-action .kicker {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .call-to-action h2 {
+    margin-top: 1.2rem;
+    font-size: clamp(2.8rem, 4vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #ffffff;
+  }
+
+  .call-to-action .lead {
+    margin-top: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .call-to-action .card {
+    background: #ffffff;
+    border-radius: 3rem;
+    padding: 4rem;
+    box-shadow: 14px 19px 30px 2px rgba(0, 0, 0, 0.25);
+    color: #0f172a;
+    min-width: 0;
+  }
+
+  .call-to-action .card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #1A54F0;
+    margin-bottom: 2.5rem;
+  }
+
+  .call-to-action .contact-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .call-to-action .contact-list li {
+    display: flex;
+    gap: 1.4rem;
+    align-items: flex-start;
+  }
+
+  .call-to-action .ico {
+    flex-shrink: 0;
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 999px;
+    background: rgba(26, 84, 240, 0.1);
+    color: #1A54F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .call-to-action .ico svg { width: 1.9rem; height: 1.9rem; }
+
+  .call-to-action .item-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .call-to-action .item-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 0.3rem;
+    text-decoration: none;
+    display: inline-block;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .call-to-action .item-value:hover { color: #1A54F0; }
+
+  .call-to-action .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    width: 100%;
+    padding: 1.6rem 2.4rem;
+    border-radius: 1.6rem;
+    background: linear-gradient(120deg, #132D77, #1A54F0);
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 25px -8px rgba(26, 84, 240, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .call-to-action .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 35px -8px rgba(26, 84, 240, 0.6);
+  }
+
+  @media (max-width: 1024px) {
+    .call-to-action { padding: 8rem 0 12rem; }
+    .call-to-action .wrap {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+    .call-to-action .content { padding-right: 0; text-align: center; }
+    .call-to-action .card { padding: 3rem; }
+  }
+
+  @media (max-width: 500px) {
+    .call-to-action { padding: 7rem 0 10rem; }
+    .call-to-action .wrap { width: 88%; gap: 3rem; }
+    .call-to-action .card { padding: 2.4rem; border-radius: 2rem; }
+    .call-to-action .item-value { font-size: 1.5rem; word-break: break-all; }
   }
 /*# sourceMappingURL=main.css.map */
