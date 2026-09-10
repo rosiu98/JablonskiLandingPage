@@ -1816,7 +1816,7 @@ footer {
     .kategorie h2 { font-size: 3rem; }
     .kategorie-hero h1 { font-size: 3.4rem; }
     .kategorie .button-primary, .kategorie .button-ghost { width: 100%; text-align: center; padding: 1.8rem 2rem; }
-    .kategorie-facts { padding: 0; grid-template-columns: 1fr; }
+    .kategorie-facts { padding: 0; }
   }
 
   /* ---------- PRZERYWNIK FOTO A (naprzemienny) ---------- */
