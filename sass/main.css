@@ -1619,4 +1619,275 @@ footer {
     .call-to-action .card { padding: 2.4rem; border-radius: 2rem; }
     .call-to-action .item-value { font-size: 1.5rem; word-break: break-all; }
   }
+
+  .kategorie {
+    font-family: "Poppins", sans-serif;
+    color: #1b2434;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    overflow: hidden;
+  }
+  .kategorie *, .kategorie *::before, .kategorie *::after { box-sizing: border-box; }
+  .kategorie p { margin: 0 0 1.5rem; }
+  .kategorie h1, .kategorie h2, .kategorie h3 { font-family: "Poppins", sans-serif; margin: 0; }
+  .kategorie ul { list-style: none; margin: 0; padding: 0; }
+
+  .kategorie .wrap { max-width: 144rem; width: 80%; margin: 0 auto; }
+
+  .kategorie .kicker {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #0f4ef9;
+    margin-bottom: 1.5rem;
+  }
+  .kategorie h2 { font-size: 4rem; font-weight: 300; line-height: 1.25; margin-bottom: 2rem; }
+  .kategorie h2 strong { font-weight: 700; }
+  .kategorie h3 { font-size: 2.2rem; font-weight: 600; margin-bottom: 1rem; }
+  .kategorie .lead { font-size: 1.8rem; color: #46506a; }
+
+  .kategorie .button-primary,
+  .kategorie a.button-primary {
+    display: inline-block;
+    padding: 2rem 3.5rem;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Poppins";
+    background-image: linear-gradient(to right, #323e5d, #0f4ef9);
+    box-shadow: -6px 9px 4px 0px rgba(0, 0, 0, 0.25);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  .kategorie .button-primary:hover { transform: translateY(-2px); }
+  .kategorie .button-ghost {
+    display: inline-block;
+    padding: 2rem 3.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .kategorie .button-ghost:hover { background: rgba(255, 255, 255, 0.12); }
+
+  /* ---------- HERO ---------- */
+  .kategorie-hero {
+    position: relative;
+    background: linear-gradient(120deg, #132d77, #1a54f0);
+    color: #fff;
+    padding: 12rem 0 14rem;
+  }
+  .kategorie-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto -10rem -12rem auto;
+    width: 40rem; height: 40rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .kategorie-hero .wrap { position: relative; z-index: 2; display: grid; grid-template-columns: 0.55fr 0.45fr; gap: 6rem; align-items: center; }
+  .kategorie-hero .kicker { color: rgba(255, 255, 255, 0.85); }
+  .kategorie-hero h1 { font-size: 5.6rem; font-weight: 300; line-height: 1.15; margin-bottom: 2.5rem; }
+  .kategorie-hero h1 strong { font-weight: 700; display: block; }
+  .kategorie-hero p { color: rgba(255, 255, 255, 0.9); font-size: 1.8rem; max-width: 56rem; }
+  .kategorie-hero .actions { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 3.5rem; }
+
+  .kategorie-facts {
+    background: none;
+    color: #1b2434;
+    padding: 0;
+    box-shadow: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .kategorie-facts div {
+    background: #fff;
+    padding: 4rem 2.4rem;
+    text-align: center;
+    border-radius: 1.8rem;
+    box-shadow: 0 18px 40px -18px rgb(14, 12, 88);
+    transition: box-shadow .3s ease, transform .3s ease;
+    animation: pikFloat 6s ease-in-out infinite;
+  }
+  .kategorie-facts div:hover { box-shadow: 0 28px 60px -20px rgba(10, 30, 90, 0.55); }
+  .kategorie-facts div:nth-child(2) { animation-delay: .6s; }
+  .kategorie-facts div:nth-child(3) { animation-delay: 1.2s; }
+  .kategorie-facts div:nth-child(4) { animation-delay: 1.8s; }
+  @keyframes pikFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @media (prefers-reduced-motion: reduce) { .kategorie-facts div { animation: none; } }
+  .kategorie-facts span { display: block; font-weight: 800; }
+  .kategorie-facts small { display: block; font-size: 1.4rem; color: #5b6376; margin-top: 1.2rem; }
+  .kategorie-facts .upper-bold { text-transform: uppercase; display: block; font-weight: 700; color: #1b2434; }
+
+  /* ---------- SEKCJE ---------- */
+  .kategorie-section { padding: 12rem 0; }
+  .kategorie-section.alt { background: #f6f7fa; }
+  .kategorie .head-center { text-align: center; max-width: 80rem; margin: 0 auto 6rem; }
+
+  .kategorie-split { display: grid; grid-template-columns: 0.5fr 0.5fr; gap: 6rem; align-items: start; }
+
+  .kategorie-list li {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    padding: 1.6rem 0; border-bottom: 1px solid #e6e8ee;
+  }
+  .kategorie-list li:last-child { border-bottom: none; }
+  .kategorie-list .ico { flex: 0 0 auto; color: #0f4ef9; margin-top: 0.3rem; }
+  .kategorie-list b { display: block; font-weight: 600; }
+  .kategorie-list span { color: #5b6376; font-size: 1.5rem; }
+
+  .kategorie-note {
+    background: #f9f9f9;
+    border-left: 6px solid #0f4ef9;
+    padding: 3rem;
+    box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.12);
+  }
+  .kategorie-note p:last-child { margin-bottom: 0; }
+
+  /* karty */
+  .kategorie-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  .kategorie-card {
+    background: #f9f9f9;
+    padding: 3.5rem 3rem;
+    box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.18);
+    border-top: 5px solid #0f4ef9;
+  }
+  .kategorie-card .num { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.2em; color: #0f4ef9; }
+  .kategorie-card p { color: #5b6376; margin-bottom: 0; }
+
+  /* cennik */
+  .kategorie-price { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+  .kategorie-price .box {
+    background: #fff; padding: 4rem 3rem; display: flex; flex-direction: column;
+    box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.18);
+  }
+  .kategorie-price .box.best { background: linear-gradient(120deg, #132d77, #1a54f0); color: #fff; }
+  .kategorie-price .box.best p, .kategorie-price .box.best li { color: rgba(255, 255, 255, 0.9); }
+  .kategorie-price .tag { font-size: 1.3rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: #0f4ef9; }
+  .kategorie-price .box.best .tag { color: #fff; }
+  .kategorie-price .amount { font-size: 4rem; font-weight: 700; margin: 1rem 0 2rem; line-height: 1; }
+  .kategorie-price ul { margin-bottom: 3rem; }
+  .kategorie-price li { padding: 0.9rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.07); color: #5b6376; font-size: 1.5rem; }
+  .kategorie-price .box.best li { border-bottom-color: rgba(255, 255, 255, 0.2); }
+  .kategorie-price .box .button-primary { margin-top: auto; text-align: center; }
+  .kategorie-price .box.best .button-primary { background-image: none; background: #fff; color: #132d77; }
+
+  /* FAQ */
+  .kategorie-faq { max-width: 96rem; margin: 0 auto; }
+  .kategorie-faq details {
+    background: #fff; padding: 2.5rem 3rem; margin-bottom: 1.5rem;
+    box-shadow: -4px 8px 30px 0px rgba(0, 0, 0, 0.10);
+  }
+  .kategorie-faq summary {
+    cursor: pointer; list-style: none; font-weight: 600; font-size: 1.8rem;
+    display: flex; justify-content: space-between; align-items: center; gap: 2rem;
+  }
+  .kategorie-faq summary::-webkit-details-marker { display: none; }
+  .kategorie-faq summary::after { content: "+"; color: #0f4ef9; font-size: 2.6rem; line-height: 1; }
+  .kategorie-faq details[open] summary::after { content: "–"; }
+  .kategorie-faq details p { margin: 1.5rem 0 0; color: #5b6376; }
+
+  /* CTA */
+  .kategorie-cta { background: linear-gradient(to right, #323e5d, #0f4ef9); color: #fff; padding: 10rem 0; text-align: center; }
+  .kategorie-cta h2 { color: #fff; }
+  .kategorie-cta p { color: rgba(255, 255, 255, 0.9); max-width: 70rem; margin: 0 auto 4rem; font-size: 1.8rem; }
+  .kategorie-cta .button-primary { background-image: none; background: #fff; color: #132d77; }
+
+  @media (max-width: 1024px) {
+    .kategorie-hero .wrap, .kategorie-split { grid-template-columns: 1fr; gap: 4rem; }
+    .kategorie-hero { padding: 9rem 0 10rem; }
+    .kategorie-hero h1 { font-size: 4.2rem; }
+    .kategorie-section { padding: 9rem 0; }
+    .kategorie-cards, .kategorie-price { grid-template-columns: 1fr; }
+    .kategorie-formal { order: -1; }
+  }
+  @media (max-width: 500px) {
+    .kategorie .wrap { width: 88%; }
+    .kategorie h2 { font-size: 3rem; }
+    .kategorie-hero h1 { font-size: 3.4rem; }
+    .kategorie .button-primary, .kategorie .button-ghost { width: 100%; text-align: center; padding: 1.8rem 2rem; }
+    .kategorie-facts { padding: 0; grid-template-columns: 1fr; }
+  }
+
+  /* ---------- PRZERYWNIK FOTO A (naprzemienny) ---------- */
+  .kategorie-photo-alt { padding: 12rem 0; background: #fff; }
+  .kategorie-photo-alt .wrap { display: grid; grid-template-columns: 0.5fr 0.5fr; gap: 6rem; align-items: center; }
+  .kategorie-photo-alt .shot { position: relative; }
+  .kategorie-photo-alt .shot img {
+    display: block; width: 100%; height: 58rem; object-fit: cover; object-position: center 30%;
+    box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.25); position: relative; z-index: 2;
+  }
+  .kategorie-photo-alt .shot::before {
+    content: ""; position: absolute; inset: -2.5rem -2.5rem 2.5rem 2.5rem;
+    border: 3px solid #0f4ef9; z-index: 1;
+  }
+  .kategorie-photo-alt .badge {
+    position: absolute; z-index: 3; right: -2rem; bottom: -2rem;
+    background: linear-gradient(120deg, #132d77, #1a54f0); color: #fff;
+    padding: 2.4rem 3rem; box-shadow: -6px 9px 4px 0px rgba(0, 0, 0, 0.25); max-width: 26rem;
+  }
+  .kategorie-photo-alt .badge b { display: block; font-size: 3.2rem; font-weight: 700; line-height: 1; }
+  .kategorie-photo-alt .badge small { display: block; font-size: 1.4rem; color: rgba(255,255,255,.9); margin-top: .8rem; }
+  .kategorie-photo-alt .quote {
+    border-left: 6px solid #0f4ef9; padding-left: 2.5rem; font-size: 1.8rem;
+    color: #46506a; font-style: italic; margin: 0 0 3rem;
+  }
+
+  /* ---------- PRZERYWNIK FOTO B (pas redakcyjny) ---------- */
+  .kategorie-photo-band { position: relative; padding: 0; background: #f6f7fa; }
+  .kategorie-photo-band .band {
+    position: relative; height: 60rem; overflow: hidden;
+  }
+  .kategorie-photo-band .band img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
+  .kategorie-photo-band .band::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(19,45,119,.85) 0%, rgba(19,45,119,.35) 45%, rgba(19,45,119,0) 75%);
+  }
+  .kategorie-photo-band .over {
+    position: absolute; inset: 0; z-index: 2; display: flex; align-items: center;
+  }
+  .kategorie-photo-band .over .wrap { color: #fff; }
+  .kategorie-photo-band .over h2 { color: #fff; max-width: 58rem; }
+  .kategorie-photo-band .over .kicker { color: rgba(255,255,255,.85); }
+  .kategorie-photo-band .over p { color: rgba(255,255,255,.92); max-width: 52rem; font-size: 1.8rem; }
+  .kategorie-photo-band .stats {
+    position: relative; z-index: 3; margin-top: -9rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;
+  }
+  .kategorie-photo-band .stats div {
+    background: #fff; padding: 3.5rem 3rem; border-top: 5px solid #0f4ef9;
+    box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.18);
+  }
+  .kategorie-photo-band .stats b { display: block; font-size: 3.4rem; font-weight: 700; color: #132d77; line-height: 1; }
+  .kategorie-photo-band .stats span { display: block; color: #5b6376; font-size: 1.5rem; margin-top: 1.2rem; }
+  .kategorie-photo-band .after { padding: 8rem 0 12rem; }
+
+  @media (max-width: 1024px) {
+    .kategorie-photo-alt { padding: 9rem 0; }
+    .kategorie-photo-alt .wrap { grid-template-columns: 1fr; gap: 5rem; }
+    .kategorie-photo-alt .shot img { height: 46rem; }
+    .kategorie-photo-band .band { height: 44rem; }
+    .kategorie-photo-band .stats { grid-template-columns: 1fr; margin-top: -6rem; }
+    .kategorie-photo-band .after { padding: 6rem 0 9rem; }
+  }
+  @media (max-width: 500px) {
+    .kategorie-photo-alt .shot img { height: 36rem; }
+    .kategorie-photo-alt .shot::before { inset: -1.5rem -1.5rem 1.5rem 1.5rem; }
+    .kategorie-photo-alt .badge { position: static; max-width: none; margin-top: 2rem; }
+    .kategorie-photo-band .band { height: 34rem; }
+    .kategorie-photo-band .over h2 { font-size: 2.8rem; }
+  }
+
+
+
 /*# sourceMappingURL=main.css.map */

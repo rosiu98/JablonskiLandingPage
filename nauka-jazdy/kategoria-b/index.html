@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="Nbm5h1mb-F0lqcyi15JPEs1Ni1sGuXbRFQwL8PfIm1w" />
+    <link rel="stylesheet" href="/sass/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css"/>
+    <title>Prawo jazdy kategorii B – Jerzy Jabłoński, Proszowice i Kraków</title>
+    <meta name="description" content="Kurs prawa jazdy kategorii B z Jerzym Jabłońskim — uprawnienia, formalności, przebieg szkolenia, cennik i FAQ. Proszowice i Kraków.">
+    <link rel="canonical" href="https://jablonski-naukajazdy.pl/prawo-jazdy-kategoria-b/">
+    <meta name="author" content="Jerzy Jabłoński">
+
+  
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="/images/browserconfig.xml">
+<meta name="theme-color" content="#007aff">  
+    <script defer src="/script.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy54ZNaySUbbdf7Ch1kr3_T2iltnRzH4c&callback=initMap&libraries=geometry,places&v=weekly"
+    async></script>
+  </head>
+
+  <body>
+    <button type="button" class="scrollToTop-btn" style="border:0; outline:0;" aria-label="Przewiń do góry">
+      <img src="/images/arrow-top.svg" alt="">
+    </button>
+
+    <div class="overlay hidden"></div>
+
+    <header class="header" id='header'>
+      <nav class="header__nav" aria-label="Główna nawigacja">
+        <div class="header__nav__logo">
+          <a href="/#header" aria-label="Jerzy Jabłoński – strona główna">
+            <img src="/images/Logo.svg" alt="Logo" />
+          </a>
+        </div>
+        <div class="menu-btn"></div>
+        <div class="header__nav__links">
+          <a class="link" href="/#main">O mnie</a>
+          <a class="link" href="/#services">Usługi</a>
+          <a class="link" href="/#reviews">Opinie</a>
+          <a class="link" href="/#footer">Kontakt</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+
+        <style>
+  .kategorie {
+    font-family: "Poppins", sans-serif;
+    color: #1b2434;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    overflow: hidden;
+  }
+  .kategorie *, .kategorie *::before, .kategorie *::after { box-sizing: border-box; }
+  .kategorie p { margin: 0 0 1.5rem; }
+  .kategorie h1, .kategorie h2, .kategorie h3 { font-family: "Poppins", sans-serif; margin: 0; }
+  .kategorie ul { list-style: none; margin: 0; padding: 0; }
+
+  .kategorie .wrap { max-width: 144rem; width: 80%; margin: 0 auto; }
+
+  .kategorie .kicker {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #0f4ef9;
+    margin-bottom: 1.5rem;
+  }
+  .kategorie h2 { font-size: 4rem; font-weight: 300; line-height: 1.25; margin-bottom: 2rem; }
+  .kategorie h2 strong { font-weight: 700; }
+  .kategorie h3 { font-size: 2.2rem; font-weight: 600; margin-bottom: 1rem; }
+  .kategorie .lead { font-size: 1.8rem; color: #46506a; }
+
+  .kategorie .button-primary,
+  .kategorie a.button-primary {
+    display: inline-block;
+    padding: 2rem 3.5rem;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Poppins";
+    background-image: linear-gradient(to right, #323e5d, #0f4ef9);
+    box-shadow: -6px 9px 4px 0px rgba(0, 0, 0, 0.25);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  .kategorie .button-primary:hover { transform: translateY(-2px); }
+  .kategorie .button-ghost {
+    display: inline-block;
+    padding: 2rem 3.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .kategorie .button-ghost:hover { background: rgba(255, 255, 255, 0.12); }
+
+  /* ---------- HERO ---------- */
+  .kategorie-hero {
+    position: relative;
+    background: linear-gradient(120deg, #132d77, #1a54f0);
+    color: #fff;
+    padding: 12rem 0 14rem;
+  }
+  .kategorie-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto -10rem -12rem auto;
+    width: 40rem; height: 40rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .kategorie-hero .wrap { position: relative; z-index: 2; display: grid; grid-template-columns: 0.55fr 0.45fr; gap: 6rem; align-items: center; }
+  .kategorie-hero .kicker { color: rgba(255, 255, 255, 0.85); }
+  .kategorie-hero h1 { font-size: 5.6rem; font-weight: 300; line-height: 1.15; margin-bottom: 2.5rem; }
+  .kategorie-hero h1 strong { font-weight: 700; display: block; }
+  .kategorie-hero p { color: rgba(255, 255, 255, 0.9); font-size: 1.8rem; max-width: 56rem; }
+  .kategorie-hero .actions { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 3.5rem; }
+
+  .kategorie-facts {
+    background: none;
+    color: #1b2434;
+    padding: 0;
+    box-shadow: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .kategorie-facts div {
+    background: #fff;
+    padding: 4rem 2.4rem;
+    text-align: center;
+    border-radius: 1.8rem;
+    box-shadow: 0 18px 40px -18px rgb(14, 12, 88);
+    transition: box-shadow .3s ease, transform .3s ease;
+    animation: pikFloat 6s ease-in-out infinite;
+  }
+  .kategorie-facts div:hover { box-shadow: 0 28px 60px -20px rgba(10, 30, 90, 0.55); }
+  .kategorie-facts div:nth-child(2) { animation-delay: .6s; }
+  .kategorie-facts div:nth-child(3) { animation-delay: 1.2s; }
+  .kategorie-facts div:nth-child(4) { animation-delay: 1.8s; }
+  @keyframes pikFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @media (prefers-reduced-motion: reduce) { .kategorie-facts div { animation: none; } }
+  .kategorie-facts span { display: block; font-weight: 800; }
+  .kategorie-facts small { display: block; font-size: 1.4rem; color: #5b6376; margin-top: 1.2rem; }
+  .kategorie-facts .upper-bold { text-transform: uppercase; display: block; font-weight: 700; color: #1b2434; }
+
+  /* ---------- SEKCJE ---------- */
+  .kategorie-section { padding: 12rem 0; }
+  .kategorie-section.alt { background: #f6f7fa; }
+  .kategorie .head-center { text-align: center; max-width: 80rem; margin: 0 auto 6rem; }
+
+  .kategorie-split { display: grid; grid-template-columns: 0.5fr 0.5fr; gap: 6rem; align-items: start; }
+
+  .kategorie-list li {
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    padding: 1.6rem 0; border-bottom: 1px solid #e6e8ee;
+  }
+  .kategorie-list li:last-child { border-bottom: none; }
+  .kategorie-list .ico { flex: 0 0 auto; color: #0f4ef9; margin-top: 0.3rem; }
+  .kategorie-list b { display: block; font-weight: 600; }
+  .kategorie-list span { color: #5b6376; font-size: 1.5rem; }
+
+  .kategorie-note {
+    background: #f9f9f9;
+    border-left: 6px solid #0f4ef9;
+    padding: 3rem;
+    box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.12);
+  }
+  .kategorie-note p:last-child { margin-bottom: 0; }
+
+  /* karty */
+  .kategorie-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  .kategorie-card {
+    background: #f9f9f9;
+    padding: 3.5rem 3rem;
+    box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.18);
+    border-top: 5px solid #0f4ef9;
+  }
+  .kategorie-card .num { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.2em; color: #0f4ef9; }
+  .kategorie-card p { color: #5b6376; margin-bottom: 0; }
+
+  /* cennik */
+  .kategorie-price { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+  .kategorie-price .box {
+    background: #fff; padding: 4rem 3rem; display: flex; flex-direction: column;
+    box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.18);
+  }
+  .kategorie-price .box.best { background: linear-gradient(120deg, #132d77, #1a54f0); color: #fff; }
+  .kategorie-price .box.best p, .kategorie-price .box.best li { color: rgba(255, 255, 255, 0.9); }
+  .kategorie-price .tag { font-size: 1.3rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: #0f4ef9; }
+  .kategorie-price .box.best .tag { color: #fff; }
+  .kategorie-price .amount { font-size: 4rem; font-weight: 700; margin: 1rem 0 2rem; line-height: 1; }
+  .kategorie-price ul { margin-bottom: 3rem; }
+  .kategorie-price li { padding: 0.9rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.07); color: #5b6376; font-size: 1.5rem; }
+  .kategorie-price .box.best li { border-bottom-color: rgba(255, 255, 255, 0.2); }
+  .kategorie-price .box .button-primary { margin-top: auto; text-align: center; }
+  .kategorie-price .box.best .button-primary { background-image: none; background: #fff; color: #132d77; }
+
+  /* FAQ */
+  .kategorie-faq { max-width: 96rem; margin: 0 auto; }
+  .kategorie-faq details {
+    background: #fff; padding: 2.5rem 3rem; margin-bottom: 1.5rem;
+    box-shadow: -4px 8px 30px 0px rgba(0, 0, 0, 0.10);
+  }
+  .kategorie-faq summary {
+    cursor: pointer; list-style: none; font-weight: 600; font-size: 1.8rem;
+    display: flex; justify-content: space-between; align-items: center; gap: 2rem;
+  }
+  .kategorie-faq summary::-webkit-details-marker { display: none; }
+  .kategorie-faq summary::after { content: "+"; color: #0f4ef9; font-size: 2.6rem; line-height: 1; }
+  .kategorie-faq details[open] summary::after { content: "–"; }
+  .kategorie-faq details p { margin: 1.5rem 0 0; color: #5b6376; }
+
+  /* CTA */
+  .kategorie-cta { background: linear-gradient(to right, #323e5d, #0f4ef9); color: #fff; padding: 10rem 0; text-align: center; }
+  .kategorie-cta h2 { color: #fff; }
+  .kategorie-cta p { color: rgba(255, 255, 255, 0.9); max-width: 70rem; margin: 0 auto 4rem; font-size: 1.8rem; }
+  .kategorie-cta .button-primary { background-image: none; background: #fff; color: #132d77; }
+
+  @media (max-width: 1024px) {
+    .kategorie-hero .wrap, .kategorie-split { grid-template-columns: 1fr; gap: 4rem; }
+    .kategorie-hero { padding: 9rem 0 10rem; }
+    .kategorie-hero h1 { font-size: 4.2rem; }
+    .kategorie-section { padding: 9rem 0; }
+    .kategorie-cards, .kategorie-price { grid-template-columns: 1fr; }
+    .kategorie-formal { order: -1; }
+  }
+  @media (max-width: 500px) {
+    .kategorie .wrap { width: 88%; }
+    .kategorie h2 { font-size: 3rem; }
+    .kategorie-hero h1 { font-size: 3.4rem; }
+    .kategorie .button-primary, .kategorie .button-ghost { width: 100%; text-align: center; padding: 1.8rem 2rem; }
+    .kategorie-facts { padding: 0; grid-template-columns: 1fr; }
+  }
+
+  /* ---------- PRZERYWNIK FOTO A (naprzemienny) ---------- */
+  .kategorie-photo-alt { padding: 12rem 0; background: #fff; }
+  .kategorie-photo-alt .wrap { display: grid; grid-template-columns: 0.5fr 0.5fr; gap: 6rem; align-items: center; }
+  .kategorie-photo-alt .shot { position: relative; }
+  .kategorie-photo-alt .shot img {
+    display: block; width: 100%; height: 58rem; object-fit: cover; object-position: center 30%;
+    box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.25); position: relative; z-index: 2;
+  }
+  .kategorie-photo-alt .shot::before {
+    content: ""; position: absolute; inset: -2.5rem -2.5rem 2.5rem 2.5rem;
+    border: 3px solid #0f4ef9; z-index: 1;
+  }
+  .kategorie-photo-alt .badge {
+    position: absolute; z-index: 3; right: -2rem; bottom: -2rem;
+    background: linear-gradient(120deg, #132d77, #1a54f0); color: #fff;
+    padding: 2.4rem 3rem; box-shadow: -6px 9px 4px 0px rgba(0, 0, 0, 0.25); max-width: 26rem;
+  }
+  .kategorie-photo-alt .badge b { display: block; font-size: 3.2rem; font-weight: 700; line-height: 1; }
+  .kategorie-photo-alt .badge small { display: block; font-size: 1.4rem; color: rgba(255,255,255,.9); margin-top: .8rem; }
+  .kategorie-photo-alt .quote {
+    border-left: 6px solid #0f4ef9; padding-left: 2.5rem; font-size: 1.8rem;
+    color: #46506a; font-style: italic; margin: 0 0 3rem;
+  }
+
+  /* ---------- PRZERYWNIK FOTO B (pas redakcyjny) ---------- */
+  .kategorie-photo-band { position: relative; padding: 0; background: #f6f7fa; }
+  .kategorie-photo-band .band {
+    position: relative; height: 60rem; overflow: hidden;
+  }
+  .kategorie-photo-band .band img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
+  .kategorie-photo-band .band::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(19,45,119,.85) 0%, rgba(19,45,119,.35) 45%, rgba(19,45,119,0) 75%);
+  }
+  .kategorie-photo-band .over {
+    position: absolute; inset: 0; z-index: 2; display: flex; align-items: center;
+  }
+  .kategorie-photo-band .over .wrap { color: #fff; }
+  .kategorie-photo-band .over h2 { color: #fff; max-width: 58rem; }
+  .kategorie-photo-band .over .kicker { color: rgba(255,255,255,.85); }
+  .kategorie-photo-band .over p { color: rgba(255,255,255,.92); max-width: 52rem; font-size: 1.8rem; }
+  .kategorie-photo-band .stats {
+    position: relative; z-index: 3; margin-top: -9rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;
+  }
+  .kategorie-photo-band .stats div {
+    background: #fff; padding: 3.5rem 3rem; border-top: 5px solid #0f4ef9;
+    box-shadow: -4px 14px 53px 0px rgba(0, 0, 0, 0.18);
+  }
+  .kategorie-photo-band .stats b { display: block; font-size: 3.4rem; font-weight: 700; color: #132d77; line-height: 1; }
+  .kategorie-photo-band .stats span { display: block; color: #5b6376; font-size: 1.5rem; margin-top: 1.2rem; }
+  .kategorie-photo-band .after { padding: 8rem 0 12rem; }
+
+  @media (max-width: 1024px) {
+    .kategorie-photo-alt { padding: 9rem 0; }
+    .kategorie-photo-alt .wrap { grid-template-columns: 1fr; gap: 5rem; }
+    .kategorie-photo-alt .shot img { height: 46rem; }
+    .kategorie-photo-band .band { height: 44rem; }
+    .kategorie-photo-band .stats { grid-template-columns: 1fr; margin-top: -6rem; }
+    .kategorie-photo-band .after { padding: 6rem 0 9rem; }
+  }
+  @media (max-width: 500px) {
+    .kategorie-photo-alt .shot img { height: 36rem; }
+    .kategorie-photo-alt .shot::before { inset: -1.5rem -1.5rem 1.5rem 1.5rem; }
+    .kategorie-photo-alt .badge { position: static; max-width: none; margin-top: 2rem; }
+    .kategorie-photo-band .band { height: 34rem; }
+    .kategorie-photo-band .over h2 { font-size: 2.8rem; }
+  }
+</style>
+
+
+<div class="kategorie">
+  <!-- ============ HERO ============ -->
+  <section class="kategorie-hero" id="prawo-jazdy-kategoria-b">
+    <div class="wrap">
+      <div>
+        <span class="kicker">Kurs prawa jazdy</span>
+        <h1>Prawo jazdy <strong>kategorii B</strong></h1>
+        <p>
+          Kategoria B to najczęściej wybierane prawo jazdy w Polsce — otwiera drogę do
+          samodzielnej jazdy samochodem osobowym, dojazdów do pracy, na studia i w podróż.
+          Uczę od 25 lat w Krakowie i Proszowicach, spokojnie i bez pośpiechu, dopasowując
+          tempo szkolenia do kursanta. U mnie nie jesteś jednym z wielu — przez cały kurs
+          prowadzi Cię ten sam instruktor.
+        </p>
+        <div class="actions">
+          <a class="button-primary" href="tel:+48606720252">Zadzwoń: 606 720 252</a>
+          <a class="button-ghost" href="#cennik">Zobacz cennik</a>
+        </div>
+      </div>
+      <div class="kategorie-facts">
+        <div><span class="h1-primary">25+</span><small><b class="upper-bold">lat</b> doświadczenia</small></div>
+        <div><span class="h1-primary">30 h</span><small><b class="upper-bold">jazd</b> w kursie podstawowym</small></div>
+        <div><span class="h1-primary">2</span><small><b class="upper-bold">miasta:</b> Kraków i Proszowice</small></div>
+        <div><span class="h1-primary">1:1</span><small><b class="upper-bold">zawsze</b> ten sam instruktor</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CO DAJE KAT. B ============ -->
+  <section class="kategorie-section" id="co-daje-kat-b">
+    <div class="wrap kategorie-split">
+      <div>
+        <span class="kicker">Uprawnienia</span>
+        <h2>Co <strong>możesz prowadzić</strong> z kategorią&nbsp;B?</h2>
+        <p class="lead">
+          Prawo jazdy kat. B to znacznie więcej niż „zwykły samochód osobowy”. Poniżej
+          znajdziesz pełen zakres uprawnień, które otrzymujesz po zdanym egzaminie.
+        </p>
+        <p>
+          Warto pamiętać, że przez pierwsze 2 lata obowiązuje okres próbny — w tym czasie
+          nie wolno przekraczać określonych limitów punktów karnych, a przez pierwsze
+          8 miesięcy trzeba jeździć z zielonym listkiem i nie można przekraczać 50 km/h
+          w terenie zabudowanym.
+        </p>
+      </div>
+      <ul class="kategorie-list">
+        <li>
+          <span class="ico">✔</span>
+          <div>
+            <b>Samochód osobowy do 3,5 t</b>
+            <span>Pojazd o dopuszczalnej masie całkowitej do 3500 kg, przewożący maksymalnie 8 pasażerów poza kierowcą.</span>
+          </div>
+        </li>
+        <li>
+          <span class="ico">✔</span>
+          <div>
+            <b>Zestaw z lekką przyczepą</b>
+            <span>Samochód z przyczepą do 750 kg, a także z cięższą przyczepą, jeśli cały zestaw nie przekracza 3500 kg.</span>
+          </div>
+        </li>
+        <li>
+          <span class="ico">✔</span>
+          <div>
+            <b>Ciągnik rolniczy i pojazd wolnobieżny</b>
+            <span>Wraz z przyczepami — przydatne szczególnie w okolicach Proszowic.</span>
+          </div>
+        </li>
+        <li>
+          <span class="ico">✔</span>
+          <div>
+            <b>Motorower i czterokołowiec lekki (kat. AM)</b>
+            <span>Kategoria B automatycznie zawiera uprawnienia kategorii AM.</span>
+          </div>
+        </li>
+        <li>
+          <span class="ico">✔</span>
+          <div>
+            <b>Motocykl 125 cm³ po 3 latach</b>
+            <span>Po 3 latach posiadania kat. B możesz w Polsce prowadzić motocykl do 125 cm³ i 11 kW.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ WYMAGANIA / FORMALNOŚCI ============ -->
+  <section class="kategorie-section alt" id="wymagania">
+    <div class="wrap kategorie-split">
+        
+      <ul class="kategorie-list">
+        <li>
+            <span class="kicker">Formalności</span>
+        </li>
+        <li>
+          <span class="ico">1.</span>
+          <div>
+            <b>Wiek: 18 lat</b>
+            <span>Kurs możesz rozpocząć już 3 miesiące wcześniej, czyli w wieku 17 lat i 9 miesięcy. Osoby niepełnoletnie potrzebują pisemnej zgody rodzica lub opiekuna.</span>
+          </div>
+        </li>
+        <li>
+          <span class="ico">2.</span>
+          <div>
+            <b>Badanie lekarskie</b>
+            <span>Orzeczenie od lekarza uprawnionego do badań kierowców — trwa kilkanaście minut i można je zrobić od ręki. Podpowiem, gdzie najszybciej.</span>
+          </div>
+        </li>
+        <li>
+          <span class="ico">3.</span>
+          <div>
+            <b>Profil Kandydata na Kierowcę (PKK)</b>
+            <span>Zakładasz go w wydziale komunikacji lub online — potrzebne są: orzeczenie lekarskie, zdjęcie i dokument tożsamości. Bez numeru PKK nie można rozpocząć jazd.</span>
+          </div>
+        </li>
+        <li>
+          <span class="ico">4.</span>
+          <div>
+            <b>Zapis na kurs</b>
+            <span>Wystarczy telefon. Ustalamy pierwszy termin i plan jazd dopasowany do Twojej pracy lub szkoły.</span>
+          </div>
+        </li>
+      </ul>
+      <div class="kategorie-formal">
+        
+        <h2>Od czego <strong>zacząć?</strong></h2>
+        <p class="lead">
+          Papierologia wygląda groźniej, niż jest w rzeczywistości — całość zamyka się
+          zwykle w jednym popołudniu.
+        </p>
+        <div class="kategorie-note">
+          <p><b>Nie wiesz, od czego zacząć?</b></p>
+          <p>
+            Zadzwoń — przeprowadzę Cię przez formalności krok po kroku, powiem, jakie
+            dokumenty przygotować i gdzie je złożyć, żeby nie tracić czasu na kolejki.
+          </p>
+          <p style="margin-top:2.5rem">
+            <a class="button-primary" href="tel:+48606720252">Zadzwoń: 606 720 252</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ PRZERYWNIK FOTO A — instruktor ============ -->
+  <section class="kategorie-photo-alt" id="instruktor">
+    <div class="wrap">
+      <div class="shot">
+        <img src="/images/jerzy-instruktor.jpg" alt="Jerzy Jabłoński, instruktor nauki jazdy, przy samochodzie szkoleniowym" loading="lazy">
+        <div class="badge"><b>25+</b><small>lat za kierownicą jako instruktor</small></div>
+      </div>
+      <div>
+        <span class="kicker">Twój instruktor</span>
+        <h2>Przez cały kurs prowadzi Cię <strong>ta sama osoba</strong></h2>
+        <p class="quote">„Najpierw spokój i pewność siebie, dopiero potem tempo. Kursant, który się nie stresuje, uczy się dwa razy szybciej.”</p>
+        <p>
+          Nazywam się Jerzy Jabłoński i szkolę kierowców od ponad 25 lat w Proszowicach
+          i Krakowie. Nie przekazuję kursantów między instruktorami — od pierwszej jazdy
+          po egzamin jeździsz ze mną, tym samym autem i według planu dopasowanego do Ciebie.
+        </p>
+        <p>
+          Jazdy zaczynamy w spokojnym terenie, potem wchodzimy w ruch miejski, trasy
+          egzaminacyjne i manewry, aż wszystko wejdzie w nawyk.
+        </p>
+        <a class="button-primary" href="tel:+48606720252">Zadzwoń: 606 720 252</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRZEBIEG KURSU ============ -->
+  <section class="kategorie-section" id="przebieg-kursu">
+    <div class="wrap">
+      <div class="head-center">
+        <span class="kicker">Przebieg kursu</span>
+        <h2>Jak wygląda <strong>szkolenie na kat. B</strong></h2>
+        <p class="lead">
+          Kurs podstawowy to 30 godzin zajęć teoretycznych i 30 godzin jazd praktycznych.
+          Każdy etap omawiamy wcześniej, żebyś dokładnie wiedział, czego się spodziewać.
+        </p>
+      </div>
+      <div class="kategorie-cards">
+        <div class="kategorie-card">
+          <span class="num">ETAP 01</span>
+          <h3>Teoria</h3>
+          <p>
+            Przepisy ruchu drogowego, znaki, pierwsza pomoc i zasady bezpieczeństwa —
+            stacjonarnie lub w formie e-learningu. Uczę czytać sytuacje na drodze,
+            a nie tylko rozwiązywać testy na pamięć.
+          </p>
+        </div>
+        <div class="kategorie-card">
+          <span class="num">ETAP 02</span>
+          <h3>Plac manewrowy</h3>
+          <p>
+            Pierwsze jazdy zaczynamy spokojnie: ruszanie, zmiana biegów, parkowanie
+            prostopadłe i równoległe, zawracanie, ruszanie pod górkę. Wszystko na tych
+            samych zadaniach, które pojawiają się na egzaminie.
+          </p>
+        </div>
+        <div class="kategorie-card">
+          <span class="num">ETAP 03</span>
+          <h3>Jazda w mieście</h3>
+          <p>
+            Ruch miejski w Krakowie i trasy wokół Proszowic: skrzyżowania, rondo,
+            włączanie się do ruchu, jazda w korkach i po zmroku. Trenujemy dokładnie
+            te trasy, które WORD wykorzystuje na egzaminach.
+          </p>
+        </div>
+        <div class="kategorie-card">
+          <span class="num">ETAP 04</span>
+          <h3>Egzamin wewnętrzny</h3>
+          <p>
+            Przed zapisem na egzamin państwowy przeprowadzamy pełną próbę generalną
+            w warunkach egzaminacyjnych — z arkuszem oceny i omówieniem błędów.
+          </p>
+        </div>
+        <div class="kategorie-card">
+          <span class="num">ETAP 05</span>
+          <h3>Egzamin państwowy</h3>
+          <p>
+            Teoria: 32 pytania, do zdania potrzeba 68 z 74 punktów. Praktyka: zadania
+            na placu i jazda w ruchu miejskim. Możesz podejść do egzaminu moim autem,
+            które znasz z jazd.
+          </p>
+        </div>
+        <div class="kategorie-card">
+          <span class="num">ETAP 06</span>
+          <h3>Po egzaminie</h3>
+          <p>
+            Jeśli czujesz się niepewnie na początku samodzielnej jazdy — oferuję jazdy
+            doszkalające autostradą, po mieście lub Twoim własnym samochodem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CENNIK ============ -->
+  <section class="kategorie-section alt" id="cennik">
+    <div class="wrap">
+      <div class="head-center">
+        <span class="kicker">Cennik</span>
+        <h2>Wybierz <strong>pakiet dla siebie</strong></h2>
+        <p class="lead">Ceny orientacyjne — szczegóły ustalamy podczas rozmowy telefonicznej.</p>
+      </div>
+      <div class="kategorie-price">
+        <div class="box">
+          <span class="tag">Kurs podstawowy</span>
+          <div class="amount">od 2 500 zł</div>
+          <ul>
+            <li>30 h zajęć teoretycznych</li>
+            <li>30 h jazd praktycznych</li>
+            <li>Materiały do nauki i testy</li>
+            <li>Egzamin wewnętrzny</li>
+            <li>Elastyczny harmonogram</li>
+          </ul>
+          <a class="button-primary" href="tel:+48606720252">Zapytaj o szczegóły</a>
+        </div>
+        <div class="box best">
+          <span class="tag">Dodatkowe godziny</span>
+          <div class="amount">120 zł / 60 min</div>
+          <ul>
+            <li>Jazdy doszkalające</li>
+            <li>Dla osób po niezdanym egzaminie</li>
+            <li>Trasy egzaminacyjne WORD</li>
+            <li>Możliwa jazda Twoim autem</li>
+            <li>Dojazd do kursanta</li>
+          </ul>
+          <a class="button-primary" href="tel:+48606720252">Zapytaj o szczegóły</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ PRZERYWNIK FOTO B — auto szkoleniowe ============ -->
+  <section class="kategorie-photo-band" id="auto-szkoleniowe">
+    <div class="band">
+      <img src="/images/auto-szkoleniowe.jpg" alt="Samochód szkoleniowy z tablicą L na rynku w Proszowicach" loading="lazy">
+      <div class="over">
+        <div class="wrap">
+          <span class="kicker">Auto szkoleniowe</span>
+          <h2>Jeździsz <strong>tym samym autem</strong>, którym zdajesz</h2>
+          <p>
+            Uczysz się na samochodzie przygotowanym pod egzamin — znasz jego sprzęgło,
+            gabaryty i lusterka na pamięć, zanim wsiądziesz na plac egzaminacyjny.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="after">
+      <div class="wrap">
+        <div class="stats">
+          <div><b>Kraków i Proszowice</b><span>Jazdy po realnych trasach egzaminacyjnych w obu miastach</span></div>
+          <div><b>Plac i miasto</b><span>Manewry, parkowanie, rondo, wjazd pod górkę — do skutku</span></div>
+          <div><b>Elastyczne godziny</b><span>Terminy jazd dopasowane do pracy, szkoły i studiów</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="kategorie-section" id="faq">
+    <div class="wrap">
+      <div class="head-center">
+        <span class="kicker">Najczęstsze pytania</span>
+        <h2>FAQ — <strong>kategoria B</strong></h2>
+      </div>
+      <div class="kategorie-faq">
+        <details open>
+          <summary>Ile trwa kurs na prawo jazdy kat. B?</summary>
+          <p>Zwykle 2–3 miesiące. Wszystko zależy od Twojej dostępności — przy intensywnym harmonogramie da się zamknąć kurs znacznie szybciej, a przy jednej jeździe w tygodniu trwa to dłużej.</p>
+        </details>
+        <details>
+          <summary>Ile kosztuje całość, licząc opłaty urzędowe?</summary>
+          <p>Do ceny kursu doliczyć trzeba badanie lekarskie, opłatę za egzamin państwowy (teoria i praktyka) oraz opłatę za wydanie prawa jazdy. Podczas rozmowy telefonicznej podam aktualne stawki obowiązujące w Krakowie i Proszowicach.</p>
+        </details>
+        <details>
+          <summary>Czy mogę zacząć kurs bez PKK?</summary>
+          <p>Zajęcia teoretyczne możesz zacząć wcześniej, ale przed pierwszą jazdą musisz mieć założony Profil Kandydata na Kierowcę. Pomogę Ci przejść przez tę procedurę.</p>
+        </details>
+        <details>
+          <summary>Boję się jeździć w mieście — czy to problem?</summary>
+          <p>Absolutnie nie. Zaczynamy od spokojnych, mało ruchliwych tras i stopniowo przechodzimy do centrum. Nie ma pośpiechu ani presji — tempo ustalasz Ty.</p>
+        </details>
+        <details>
+          <summary>Czy jeździmy po trasach egzaminacyjnych?</summary>
+          <p>Tak. Znam trasy wykorzystywane przez WORD i przećwiczymy je wielokrotnie, łącznie z typowymi miejscami, w których kursanci popełniają błędy.</p>
+        </details>
+        <details>
+          <summary>Co jeśli nie zdam za pierwszym razem?</summary>
+          <p>Nic straconego — umawiamy jazdy doszkalające skoncentrowane dokładnie na tym, co poszło nie tak, i podchodzimy do kolejnego terminu z konkretnym planem.</p>
+        </details>
+        <details>
+          <summary>Czy można jeździć w weekendy i wieczorami?</summary>
+          <p>Tak. Jazdy umawiamy również popołudniami i w soboty, a w razie potrzeby również w niedzielę. Jazda po zmroku to zresztą ważny element szkolenia.</p>
+        </details>
+        <details>
+          <summary>Czy odbierasz kursanta z domu?</summary>
+          <p>Tak, w Krakowie i okolicach Proszowic dojeżdżam pod wskazany adres — nie tracisz czasu na dojazd na plac.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<section class="call-to-action" id="umow-jazde">
+    <div class="wrap">
+      <div class="content">
+        <p class="kicker">Zacznij jazdę</p>
+        <h2>Zadzwoń i umów się na pierwszą&nbsp;jazdę</h2>
+        <p class="lead">
+          Masz pytania lub chcesz zarezerwować termin? Zadzwoń lub napisz — umówimy jazdę
+          w dogodnym dla Ciebie miejscu i czasie. <br><br> Pierwsze spotkanie to okazja, żeby
+          poznać się, omówić Twój poziom i zaplanować&nbsp;kurs.
+        </p>
+      </div>
+
+      <div class="card">
+        <p class="card-title">Dane kontaktowe</p>
+        <ul class="contact-list">
+          <li>
+            <span class="ico">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <div>
+              <p class="item-label">Telefon</p>
+              <a href="tel:+48606720252" class="item-value">606 720 252</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <div>
+              <p class="item-label">E-mail</p>
+              <a href="mailto:jablonskiprawko@gmail.com" class="item-value">jablonskiprawko@gmail.com</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            <div>
+              <p class="item-label">Godziny kontaktu</p>
+              <p class="item-value">Pn–Nd: 8:00 – 20:00</p>
+            </div>
+          </li>
+        </ul>
+        <a href="tel:+48606720252" class="cta-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Zadzwoń teraz
+        </a>
+      </div>
+    </div>
+  </section>
+    </main>
+
+<footer id='footer'>
+      <div class="footer reveal">
+        <div class="footer__about">
+          <div class="footer__about__title">
+            <img src="/images/logo-white.svg" alt="logo-white">
+            <h3 class="h1-footer">
+              Jerzy Jabłoński
+            </h3>
+          </div>
+          <div class="footer__about__text">
+            <p>Ponad 25 lat doświadczenia w szkoleniu kierowców. Spokojne, praktyczne podejście i przygotowanie do samodzielnej jazdy w Proszowicach i Krakowie.
+            </p>
+          </div>
+          <div class="footer__about__links">
+            <div class="footer__about__links__title">
+              <h3 class="h1-footer">Linki</h3>
+            </div>
+            <div class="footer__about__links__content">
+              <a href='/#header'>Główna</a>
+              <a href="/#main">O mnie</a>
+              <a href="/#services">Usługi</a>
+              <a href="/#reviews">Opinie</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="footer__info">
+          <div class="footer__info__title">
+            <h3 class="h1-footer">KONTAKT</h3>
+          </div>
+          <div class="footer__info__links">
+            <ul>
+              <li><img src="/images/map-pin.svg" alt="map-icon"><p>Kraków, Proszowice</p></li>
+              <li><img src="/images/telephone.svg" alt="telephone-icon"><a href="tel:+48606720252">606 720 252</a></li>
+              <li><img src="/images/mail.svg" alt="map-icon"><a href='mailto:jablonskiprawko@gmail.com'>jablonskiprawko@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__location">
+          <div class="footer__location__title">
+            <h3 class="h1-footer">LOKALIZACJA</h3>
+          </div>
+          <div class="footer__location__map">
+            <div id='map'></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal hidden"></div>
+
+    <script>
+(function () {
+  var box = document.querySelector('.kategorie-facts');
+  if (!box || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var nums = box.querySelectorAll('.h1-primary');
+  var io = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting) return;
+    io.disconnect();
+    nums.forEach(function (el) {
+      var text = el.textContent.trim();
+      var m = text.match(/\d+/);
+      if (!m) return;
+      var target = parseInt(m[0], 10), t0 = performance.now(), dur = 1600;
+      function tick(t) {
+        var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = text.replace(/\d+/g, function () { return Math.round(target * e); });
+        if (p < 1) requestAnimationFrame(tick); else el.textContent = text;
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.3 });
+  io.observe(box);
+})();
+</script>
+  </body>
+</html>
