@@ -2090,11 +2090,11 @@ body.jj-lessons-document {margin:0;background:var(--lesson-deep,#132d77);--lesso
 .refresher-page .lesson-narrative h2 strong{ font-weight:700; }
 .refresher-page .lesson-narrative p{ font-size:15px; line-height:1.9; }
 .refresher-page .lesson-narrative-heading>p{ opacity:.85; }
-.refresher-page .lesson-story-row{ display:grid; grid-template-columns:1.1fr 1fr; gap:65px; align-items:center; padding:45px 0; border-top:1px solid color-mix(in srgb,var(--lesson-white) 20%,transparent); }
+.refresher-page .lesson-story-row{ display:grid; grid-template-columns:1.1fr 1fr; gap:65px; align-items:center; padding:45px 0; border-top:2px dashed color-mix(in srgb,var(--lesson-white) 20%,transparent); }
 .refresher-page .lesson-story-row>.lesson-story-photo img{ aspect-ratio:4/3; }
 .refresher-page .lesson-story-reverse{ grid-template-columns:1fr 1.1fr; }
 .refresher-page .lesson-story-reverse>.lesson-story-photo{ order:2; }
-.refresher-page .lesson-story-number{ font-size:11px; font-weight:600; display:block; margin-bottom:20px; opacity:.8; }
+.refresher-page .lesson-story-number{ font-size:16px; font-weight:600; display:block; margin-bottom:20px; opacity:.8; }
 .refresher-page .lesson-story-copy h3{ font-size:28px; line-height:1.4; font-weight:600; margin-bottom:20px; }
 .refresher-page .lesson-story-copy>p{ opacity:.9; }
 .refresher-page .lesson-inline-scene{ display:grid; grid-template-columns:140px 1fr; align-items:center; gap:22px; margin-top:28px; }
@@ -2148,6 +2148,7 @@ body.jj-lessons-document {margin:0;background:var(--lesson-deep,#132d77);--lesso
 .refresher-page .lesson-story-row>.lesson-story-photo img{ aspect-ratio:3/2; }
 .refresher-page .lesson-instructor-photos{ max-width:650px; }
 .refresher-page .lesson-narrative-heading .lesson-eyebrow{ margin-bottom:0; }
+.refresher-page .lesson-story-row{ border-top:2px dashed color-mix(in srgb,var(--lesson-white) 80%,transparent); }
  }
 @media(max-width:600px){.refresher-page .lesson-goal-with-photo{ padding:0; }
 .refresher-page .lesson-goal-copy{ padding:22px; }
