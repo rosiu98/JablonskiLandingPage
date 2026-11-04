@@ -49,7 +49,7 @@ body.jj-contact-document .footer__location__map iframe{border:0;width:100%;heigh
 .jj-contact{color:var(--contact-ink);background:var(--contact-paper);font:16px/1.75 'Poppins',sans-serif;letter-spacing:0}
 .jj-contact *{box-sizing:border-box;min-width:0;letter-spacing:0}
 .jj-contact .contact-wrap{width:80%;max-width:1440px;margin-inline:auto}
-.jj-contact h1,.jj-contact h2,.jj-contact p{margin:0;color:inherit}
+.jj-contact h1,.jj-contact h2,.jj-contact p, .jj-contact a{margin:0;color:inherit}
 .jj-contact h1{font-size:56px;font-weight:700;line-height:1.2;margin-bottom:22px}
 .jj-contact h2{font-size:32px;line-height:1.3;font-weight:300;margin-bottom:20px}
 .jj-contact h2 strong{font-weight:700}
@@ -85,6 +85,14 @@ body.jj-contact-document .footer__location__map iframe{border:0;width:100%;heigh
 
 body.jj-contact-document > footer .reveal{opacity:1;transform:none}
 .jj-contact .contact-details img{filter:brightness(.35);flex-shrink:0}
+body.jj-contact-document .contact-toast{position:fixed;top:22px;right:22px;z-index:3000;display:flex;gap:14px;align-items:center;max-width:380px;padding:16px 20px;background:#1c8a43;color:#fff;font:15px/1.55 'Poppins',sans-serif;box-shadow:0 14px 34px rgba(19,45,119,.28);transform:translateX(calc(100% + 40px));opacity:0;transition:transform .35s ease,opacity .35s ease}
+body.jj-contact-document .contact-toast.is-visible{transform:translateX(0);opacity:1}
+body.jj-contact-document .contact-toast .toast-check{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.22);position:relative}
+body.jj-contact-document .contact-toast .toast-check::after{content:'';position:absolute;left:9px;top:6px;width:8px;height:13px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+body.jj-contact-document .contact-toast b{display:block;font-size:16px;font-weight:600}
+body.jj-contact-document .contact-toast .toast-text span:last-child{font-size:14px;opacity:.92}
+@media(max-width:420px){body.jj-contact-document .contact-toast{top:14px;right:14px;left:14px;max-width:none;padding:14px 16px}}
+@media(prefers-reduced-motion:reduce){body.jj-contact-document .contact-toast{transition:none}}
 @media(max-width:420px){.jj-contact .contact-details{margin-top:22px}.jj-contact .contact-details li{gap:10px}.jj-contact .contact-details a[href^="mailto:"]{font-size:14px}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -126,10 +134,10 @@ body.jj-contact-document > footer .reveal{opacity:1;transform:none}
 <div><h2>Porozmawiajmy <strong>o Twojej jeździe</strong></h2><p>Nauka jazdy i jazdy doszkalające kategorii B, C oraz C+E. Spokojnie, konkretnie i z planem dopasowanym do Ciebie.</p>
 <ul class="contact-details"><li><img alt="" src="/images/telephone.svg"/><div><span>Telefon</span><a href="tel:+48606720252">606 720 252</a></div></li><li><img alt="" src="/images/mail.svg"/><div><span>E-mail</span><a href="mailto:jablonskiprawko@gmail.com">jablonskiprawko@gmail.com</a></div></li><li><img alt="" src="/images/map-pin.svg"/><div><span>Obszar jazd</span><b>Kraków i Proszowice</b></div></li></ul>
 <p class="contact-note">Jerzy Jabłoński · instruktor nauki jazdy.<br/>Miejsce spotkania i termin ustalimy podczas kontaktu.</p></div>
-<div><h2>Napisz <strong>wiadomość</strong></h2><p>Opowiedz krótko, czego potrzebujesz — nauki od podstaw, przygotowania do egzaminu czy powrotu za kierownicę.</p>
-<!-- Web3Forms: wpisz swój klucz dostępu (access_key) z https://web3forms.com — wiadomości trafiają na adres podany przy tworzeniu klucza. -->
+<div><div class="contact-form-head" id="contact-form-head"><h2>Napisz <strong>wiadomość</strong></h2><p>Opowiedz krótko, czego potrzebujesz — nauki od podstaw, przygotowania do egzaminu czy powrotu za kierownicę.</p></div>
+<!-- Web3Forms: wiadomości trafiają na adres podany przy tworzeniu klucza (jablonskiprawko@gmail.com). -->
 <form action="https://api.web3forms.com/submit" id="contact-form" method="POST" novalidate>
-<input name="access_key" type="hidden" value="2335509d-0f9e-4156-ace6-7caf0fe068fc"/><input name="subject" type="hidden" value="Nowa wiadomość ze strony — Kontakt"/><input name="from_name" type="hidden" value="Strona jablonski-naukajazdy.pl"/><input aria-hidden="true" autocomplete="off" class="contact-hp" name="botcheck" tabindex="-1" type="checkbox"/>
+<input name="access_key" type="hidden" value="2335509d-0f9e-4156-ace6-7caf0fe068fc"/><input name="subject" type="hidden" value="Nowa wiadomość ze strony — Kontakt"/><input name="from_name" type="hidden" value="Strona jablonski-naukajazdy.pl"/><input aria-hidden="true" autocomplete="off" class="contact-hp" name="botcheck" style="visibility: hidden;" tabindex="-1" type="checkbox"/>
 <div class="contact-fields">
 <label>Imię *<input aria-describedby="err-name" autocomplete="given-name" maxlength="100" name="name"/><small class="field-error" id="err-name"></small></label>
 <label>E-mail *<input aria-describedby="err-email" autocomplete="email" maxlength="254" name="email" type="email"/><small class="field-error" id="err-email"></small></label>
@@ -141,6 +149,7 @@ body.jj-contact-document > footer .reveal{opacity:1;transform:none}
 <p class="contact-privacy">Dane posłużą do odpowiedzi na Twoją wiadomość. Formularz jest obsługiwany przez <a href="https://web3forms.com/privacy" rel="noopener noreferrer" target="_blank">Web3Forms</a>.</p>
 </form>
 <div class="contact-success" hidden="" id="contact-success" role="status" tabindex="-1"><span class="success-check" aria-hidden="true"></span><h3>Dziękuję, wiadomość wysłana!</h3><p>Odezwę się najszybciej, jak to możliwe. W pilnej sprawie zadzwoń: <a href="tel:+48606720252">606 720 252</a>.</p><button class="contact-button" id="contact-again" type="button">Wyślij kolejną wiadomość</button></div></div></div></section></main>
+<div class="contact-toast" id="contact-toast" role="status" hidden=""><span aria-hidden="true" class="toast-check"></span><div class="toast-text"><b>Wiadomość wysłana!</b><span>Dziękuję — odezwę się najszybciej, jak to możliwe.</span></div></div>
 <footer id="footer">
 <div class="footer reveal">
 <div class="footer__about">
@@ -251,7 +260,9 @@ body.jj-contact-document > footer .reveal{opacity:1;transform:none}
   const errorBox = document.querySelector('#contact-error');
   const success = document.querySelector('#contact-success');
   const again = document.querySelector('#contact-again');
-  if (!form || !errorBox || !success) return;
+  const formHead = document.querySelector('#contact-form-head');
+  const toast = document.querySelector('#contact-toast');
+  if (!form || !errorBox || !success || !toast) return;
   const button = form.querySelector('button[type="submit"]');
   const label = button.querySelector('.btn-label');
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -305,8 +316,10 @@ body.jj-contact-document > footer .reveal{opacity:1;transform:none}
       form.reset();
       form.querySelectorAll('.is-valid').forEach(el => el.classList.remove('is-valid'));
       form.hidden = true;
+      if (formHead) formHead.hidden = true;
       success.hidden = false;
       success.focus();
+      showToast();
     } catch (err) {
       errorBox.textContent = 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub zadzwoń: 606 720 252.';
       errorBox.hidden = false;
@@ -314,7 +327,22 @@ body.jj-contact-document > footer .reveal{opacity:1;transform:none}
       setLoading(false);
     }
   });
-  again?.addEventListener('click', () => { success.hidden = true; form.hidden = false; form.elements.namedItem('name').focus(); });
+  let toastTimer = null;
+  const showToast = () => {
+    clearTimeout(toastTimer);
+    toast.hidden = false;
+    requestAnimationFrame(() => toast.classList.add('is-visible'));
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('is-visible');
+      toastTimer = setTimeout(() => { toast.hidden = true; }, 400);
+    }, 6000);
+  };
+  const hideToast = () => {
+    clearTimeout(toastTimer);
+    toast.classList.remove('is-visible');
+    toast.hidden = true;
+  };
+  again?.addEventListener('click', () => { success.hidden = true; form.hidden = false; if (formHead) formHead.hidden = false; hideToast(); form.elements.namedItem('name').focus(); });
 })();
 </script></body>
 </html>
