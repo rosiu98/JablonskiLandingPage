@@ -127,13 +127,20 @@ body.jj-contact-document > footer .reveal{opacity:1;transform:none}
 <ul class="contact-details"><li><img alt="" src="/images/telephone.svg"/><div><span>Telefon</span><a href="tel:+48606720252">606 720 252</a></div></li><li><img alt="" src="/images/mail.svg"/><div><span>E-mail</span><a href="mailto:jablonskiprawko@gmail.com">jablonskiprawko@gmail.com</a></div></li><li><img alt="" src="/images/map-pin.svg"/><div><span>Obszar jazd</span><b>Kraków i Proszowice</b></div></li></ul>
 <p class="contact-note">Jerzy Jabłoński · instruktor nauki jazdy.<br/>Miejsce spotkania i termin ustalimy podczas kontaktu.</p></div>
 <div><h2>Napisz <strong>wiadomość</strong></h2><p>Opowiedz krótko, czego potrzebujesz — nauki od podstaw, przygotowania do egzaminu czy powrotu za kierownicę.</p>
-<!-- FormSubmit: po pierwszym zgłoszeniu właściciel musi potwierdzić adres e-mail. CAPTCHA pozostaje włączona. -->
-<form accept-charset="UTF-8" action="https://formsubmit.co/jablonskiprawko@gmail.com" id="contact-form" method="POST">
-<input name="_subject" type="hidden" value="Nowa wiadomość ze strony — Kontakt"/><input name="_template" type="hidden" value="table"/><input aria-hidden="true" autocomplete="off" hidden="" name="_honey" tabindex="-1" type="text"/>
-<div class="contact-fields"><label>Imię *<input autocomplete="given-name" maxlength="100" name="name" required=""/></label><label>E-mail *<input autocomplete="email" maxlength="254" name="email" required="" type="email"/></label><label class="contact-full">Telefon (opcjonalnie)<input autocomplete="tel" maxlength="30" name="phone" type="tel"/></label><label class="contact-full">Wiadomość *<textarea maxlength="3000" minlength="10" name="message" required="" rows="5"></textarea></label></div>
-<p class="contact-error" hidden="" id="contact-error" role="alert"></p><button class="contact-button" type="submit">Wyślij wiadomość <img alt="" src="/images/mail.svg"/></button>
-<p class="contact-privacy">Dane posłużą do odpowiedzi na Twoją wiadomość. Formularz jest obsługiwany przez <a href="https://formsubmit.co/privacy.pdf" rel="noopener noreferrer" target="_blank">FormSubmit</a>.</p>
-</form></div></div></section></main>
+<!-- Web3Forms: wpisz swój klucz dostępu (access_key) z https://web3forms.com — wiadomości trafiają na adres podany przy tworzeniu klucza. -->
+<form action="https://api.web3forms.com/submit" id="contact-form" method="POST" novalidate>
+<input name="access_key" type="hidden" value="2335509d-0f9e-4156-ace6-7caf0fe068fc"/><input name="subject" type="hidden" value="Nowa wiadomość ze strony — Kontakt"/><input name="from_name" type="hidden" value="Strona jablonski-naukajazdy.pl"/><input aria-hidden="true" autocomplete="off" class="contact-hp" name="botcheck" tabindex="-1" type="checkbox"/>
+<div class="contact-fields">
+<label>Imię *<input aria-describedby="err-name" autocomplete="given-name" maxlength="100" name="name"/><small class="field-error" id="err-name"></small></label>
+<label>E-mail *<input aria-describedby="err-email" autocomplete="email" maxlength="254" name="email" type="email"/><small class="field-error" id="err-email"></small></label>
+<label class="contact-full">Telefon (opcjonalnie)<input aria-describedby="err-phone" autocomplete="tel" maxlength="20" name="phone" type="tel"/><small class="field-error" id="err-phone"></small></label>
+<label class="contact-full">Wiadomość *<textarea aria-describedby="err-message" maxlength="3000" name="message" rows="5"></textarea><small class="field-error" id="err-message"></small></label>
+</div>
+<p class="contact-error" hidden="" id="contact-error" role="alert"></p>
+<button class="contact-button" type="submit"><span class="btn-label">Wyślij wiadomość</span><span aria-hidden="true" class="btn-spinner"></span><img alt="" src="/images/mail.svg"/></button>
+<p class="contact-privacy">Dane posłużą do odpowiedzi na Twoją wiadomość. Formularz jest obsługiwany przez <a href="https://web3forms.com/privacy" rel="noopener noreferrer" target="_blank">Web3Forms</a>.</p>
+</form>
+<div class="contact-success" hidden="" id="contact-success" role="status" tabindex="-1"><span class="success-check" aria-hidden="true"></span><h3>Dziękuję, wiadomość wysłana!</h3><p>Odezwę się najszybciej, jak to możliwe. W pilnej sprawie zadzwoń: <a href="tel:+48606720252">606 720 252</a>.</p><button class="contact-button" id="contact-again" type="button">Wyślij kolejną wiadomość</button></div></div></div></section></main>
 <footer id="footer">
 <div class="footer reveal">
 <div class="footer__about">
@@ -241,23 +248,73 @@ body.jj-contact-document > footer .reveal{opacity:1;transform:none}
 (() => {
   'use strict';
   const form = document.querySelector('#contact-form');
-  const error = document.querySelector('#contact-error');
-  if (!form || !error) return;
-  form.addEventListener('submit', (event) => {
-    const name = form.elements.namedItem('name');
-    const email = form.elements.namedItem('email');
-    const message = form.elements.namedItem('message');
-    if (!name || !email || !message) { event.preventDefault(); return; }
-    name.value = name.value.trim(); email.value = email.value.trim(); message.value = message.value.trim();
-    error.hidden = true;
-    if (!name.value || message.value.length < 10 || !form.checkValidity()) {
-      event.preventDefault();
-      error.textContent = 'Podaj imię, poprawny e-mail i wiadomość (co najmniej 10 znaków).';
-      error.hidden = false;
-      form.reportValidity();
+  const errorBox = document.querySelector('#contact-error');
+  const success = document.querySelector('#contact-success');
+  const again = document.querySelector('#contact-again');
+  if (!form || !errorBox || !success) return;
+  const button = form.querySelector('button[type="submit"]');
+  const label = button.querySelector('.btn-label');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const rules = {
+    name: v => !v ? 'Podaj swoje imię.' : v.length < 2 ? 'Imię musi mieć co najmniej 2 znaki.' : !/^[\p{L}\s'-]+$/u.test(v) ? 'Imię może zawierać tylko litery.' : '',
+    email: v => !v ? 'Podaj adres e-mail.' : !emailRe.test(v) ? 'Wpisz poprawny adres e-mail, np. jan@poczta.pl.' : '',
+    phone: v => !v ? '' : !/^\+?[\d\s-]{9,15}$/.test(v) ? 'Wpisz poprawny numer, np. 606 720 252.' : '',
+    message: v => !v ? 'Napisz kilka słów wiadomości.' : v.length < 10 ? 'Wiadomość musi mieć co najmniej 10 znaków (' + v.length + '/10).' : ''
+  };
+  const check = (name, show) => {
+    const field = form.elements.namedItem(name);
+    const msg = rules[name](field.value.trim());
+    if (show) {
+      document.getElementById('err-' + name).textContent = msg;
+      field.classList.toggle('is-invalid', !!msg);
+      field.classList.toggle('is-valid', !msg && !!field.value.trim());
+      field.setAttribute('aria-invalid', String(!!msg));
     }
-    // Prawdziwy POST do FormSubmit. Bez lokalnego komunikatu udającego wysłanie.
+    return !msg;
+  };
+  Object.keys(rules).forEach(name => {
+    const field = form.elements.namedItem(name);
+    field.addEventListener('blur', () => check(name, true));
+    field.addEventListener('input', () => { if (field.classList.contains('is-invalid')) check(name, true); });
   });
+  const setLoading = on => {
+    button.disabled = on;
+    button.classList.toggle('is-loading', on);
+    button.setAttribute('aria-busy', String(on));
+    label.textContent = on ? 'Wysyłanie…' : 'Wyślij wiadomość';
+  };
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    errorBox.hidden = true;
+    const results = Object.keys(rules).map(n => check(n, true));
+    if (results.includes(false)) {
+      form.querySelector('.is-invalid')?.focus();
+      return;
+    }
+    setLoading(true);
+    try {
+      const data = Object.fromEntries(new FormData(form));
+      Object.keys(rules).forEach(k => { data[k] = String(data[k] || '').trim(); });
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.success) throw new Error(json.message || 'Błąd wysyłki');
+      form.reset();
+      form.querySelectorAll('.is-valid').forEach(el => el.classList.remove('is-valid'));
+      form.hidden = true;
+      success.hidden = false;
+      success.focus();
+    } catch (err) {
+      errorBox.textContent = 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub zadzwoń: 606 720 252.';
+      errorBox.hidden = false;
+    } finally {
+      setLoading(false);
+    }
+  });
+  again?.addEventListener('click', () => { success.hidden = true; form.hidden = false; form.elements.namedItem('name').focus(); });
 })();
 </script></body>
 </html>
