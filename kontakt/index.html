@@ -76,6 +76,12 @@ body.jj-contact-document .footer__location__map iframe{border:0;width:100%;heigh
 .jj-contact .contact-privacy{font-size:12px;color:var(--contact-muted);margin-top:24px}
 .jj-contact .contact-privacy a{color:inherit;text-decoration:underline}
 .jj-contact .contact-error{color:var(--contact-error);font-size:14px;margin-top:12px}
+.jj-contact .contact-topics{border:0;padding:0;margin:0}
+.jj-contact .contact-topics legend{font-size:14px;font-weight:500;padding:0;margin-bottom:7px}
+.jj-contact .contact-topics-list{display:flex;flex-wrap:wrap;gap:10px}
+.jj-contact .contact-topic{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--contact-line);border-radius:4px;background:var(--contact-soft);padding:10px 14px;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .2s,background .2s}
+.jj-contact .contact-topic input{width:16px;height:16px;margin:0;padding:0;accent-color:var(--contact-blue);box-shadow:none;cursor:pointer}
+.jj-contact .contact-topic:has(input:checked){border-color:var(--contact-blue);background:#eef2fe}
 .jj-contact [hidden]{display:none!important}
 .jj-contact a:focus-visible,.jj-contact button:focus-visible,.jj-contact input:focus-visible,.jj-contact textarea:focus-visible{outline:3px solid var(--contact-blue);outline-offset:4px}
 @media(max-width:1100px){.jj-contact .contact-grid{gap:45px}body.jj-contact-document .header__nav__links{gap:25px;margin-right:0}}
@@ -142,7 +148,8 @@ body.jj-contact-document .contact-toast .toast-text span:last-child{font-size:14
 <label>Imię *<input aria-describedby="err-name" autocomplete="given-name" maxlength="100" name="name"/><small class="field-error" id="err-name"></small></label>
 <label>E-mail *<input aria-describedby="err-email" autocomplete="email" maxlength="254" name="email" type="email"/><small class="field-error" id="err-email"></small></label>
 <label class="contact-full">Telefon (opcjonalnie)<input aria-describedby="err-phone" autocomplete="tel" maxlength="20" name="phone" type="tel"/><small class="field-error" id="err-phone"></small></label>
-<label class="contact-full">Wiadomość *<textarea aria-describedby="err-message" maxlength="3000" name="message" rows="5"></textarea><small class="field-error" id="err-message"></small></label>
+<fieldset class="contact-full contact-topics"><legend>Temat wiadomości (opcjonalnie)</legend><div class="contact-topics-list"><label class="contact-topic"><input name="temat" type="checkbox" value="Jazdy doszkalające"/><span>Jazdy doszkalające</span></label><label class="contact-topic"><input name="temat" type="checkbox" value="Kategoria B"/><span>Kategoria B</span></label><label class="contact-topic"><input name="temat" type="checkbox" value="Kategoria C"/><span>Kategoria C</span></label><label class="contact-topic"><input name="temat" type="checkbox" value="Kategoria C+E"/><span>Kategoria C+E</span></label></div></fieldset>
+<label class="contact-full">Wiadomość (opcjonalnie)<textarea maxlength="3000" name="message" rows="5"></textarea></label>
 </div>
 <p class="contact-error" hidden="" id="contact-error" role="alert"></p>
 <button class="contact-button" type="submit"><span class="btn-label">Wyślij wiadomość</span><span aria-hidden="true" class="btn-spinner"></span><img alt="" src="/images/mail.svg"/></button>
@@ -269,8 +276,7 @@ body.jj-contact-document .contact-toast .toast-text span:last-child{font-size:14
   const rules = {
     name: v => !v ? 'Podaj swoje imię.' : v.length < 2 ? 'Imię musi mieć co najmniej 2 znaki.' : !/^[\p{L}\s'-]+$/u.test(v) ? 'Imię może zawierać tylko litery.' : '',
     email: v => !v ? 'Podaj adres e-mail.' : !emailRe.test(v) ? 'Wpisz poprawny adres e-mail, np. jan@poczta.pl.' : '',
-    phone: v => !v ? '' : !/^\+?[\d\s-]{9,15}$/.test(v) ? 'Wpisz poprawny numer, np. 606 720 252.' : '',
-    message: v => !v ? 'Napisz kilka słów wiadomości.' : v.length < 10 ? 'Wiadomość musi mieć co najmniej 10 znaków (' + v.length + '/10).' : ''
+    phone: v => !v ? '' : !/^\+?[\d\s-]{9,15}$/.test(v) ? 'Wpisz poprawny numer, np. 606 720 252.' : ''
   };
   const check = (name, show) => {
     const field = form.elements.namedItem(name);
@@ -306,6 +312,9 @@ body.jj-contact-document .contact-toast .toast-text span:last-child{font-size:14
     try {
       const data = Object.fromEntries(new FormData(form));
       Object.keys(rules).forEach(k => { data[k] = String(data[k] || '').trim(); });
+      data.message = String(data.message || '').trim();
+      const topics = [...form.querySelectorAll('input[name="temat"]:checked')].map(i => i.value);
+      data.temat = topics.length ? topics.join(', ') : 'Nie wybrano';
       const res = await fetch(form.action, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
