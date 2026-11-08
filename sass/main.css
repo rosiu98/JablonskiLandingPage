@@ -3067,3 +3067,7 @@ html.jj-js .jj-classic-nav .nav.open {
 @media (prefers-reduced-motion:reduce){
  .jj-faq-document .faq-chevron,.jj-faq-document .jj-faq .button-primary,.jj-faq-document .jj-faq .button-ghost{transition:none}
 }
+
+.hub-transparent:hover {
+  color:#000016 !important;
+}
