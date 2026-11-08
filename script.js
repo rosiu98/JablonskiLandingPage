@@ -1,194 +1,142 @@
-let map;
+// Shared navigation. It works independently of optional maps and carousels.
+(() => {
+  const header = document.querySelector(".jj-classic-nav");
+  if (!header) return;
 
-const menu = document.querySelector(".menu-btn");
-const linkMenu = document.querySelectorAll(".link");
-const navigation = document.querySelector(".header__nav__links");
-const menuActive = document.querySelector(".menu-btn active");
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".close-modal");
-const btnsOpenModal = document.querySelectorAll(".show-modal");
-const modalContent = [
-  {
-    image: "./images/box3.png",
-    title: "Kierowca Doskonały",
-    text: "Zdecydowales sie zostac kierowca? świetnie, krok po kroku, od podstaw zmienisz sie w pewnego siebie automobiliste",
-    list: [
-      "Ukończone 18 lat",
-      "Badania lekarskie",
-      "Profil Kandydata na Kierowce(PKK)",
-    ],
-  },
+  const toggle = header.querySelector(".toggle");
+  const navigation = header.querySelector(".nav");
+  const top = header.querySelector(".top");
+  if (!toggle || !navigation) return;
+  document.documentElement.classList.add("jj-js");
+  header.classList.add("is-enhanced");
 
-  {
-    image: "./images/box2.png",
-    title: "Jedziemy z tym koksem",
-    text: "Jesteś pasjonatem samochodów i nie możesz doczekać się aby spełnić swoje marzenie? W takim razie polecam intensywny kurs. W 1,5 miesięcy zostaniesz kozakiem na drodze",
-    list: [
-      "Ukończone 18 lat",
-      "Badania lekarskie",
-      "Profil Kandydata na Kierowce(PKK)",
-    ],
-  },
+  const mobile = window.matchMedia("(max-width: 1000px)");
+  const groups = [...navigation.querySelectorAll("details")];
 
-  {
-    image: "./images/box1.png",
-    title: "Nie jestem nowaczykiem”",
-    text: "Masz podstawowe umiejętności kierowania pojazdem, ale nie doszło do egzaminu? Razem wypełnimy luki i wyćwiczimy  technikę do perfekcji",
-    list: ["Ukończone 18 lat",
-          "Badania lekarskie",
-          "Profil Kandydata na Kierowce(PKK)"],
-  },
-];
+  const closeGroups = () => groups.forEach((group) => { group.open = false; });
+  const setMenuOpen = (open) => {
+    if (!open) {
+      // Move focus before hiding the panel, including after Escape or an outside click.
+      if (mobile.matches && navigation.contains(document.activeElement)) toggle.focus();
+      closeGroups();
+    }
+    navigation.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Zamknij menu" : "Otwórz menu");
+  };
+
+  toggle.addEventListener("click", () => {
+    setMenuOpen(!navigation.classList.contains("open"));
+  });
+
+  groups.forEach((group) => {
+    group.addEventListener("toggle", () => {
+      if (group.open) groups.forEach((other) => { if (other !== group) other.open = false; });
+    });
+  });
+
+  navigation.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setMenuOpen(false);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!header.contains(event.target)) setMenuOpen(false);
+    else if (!event.target.closest("details")) closeGroups();
+  });
+
+  header.addEventListener("focusout", (event) => {
+    if (!header.contains(event.relatedTarget)) {
+      if (mobile.matches) setMenuOpen(false);
+      else closeGroups();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    const openGroup = groups.find((group) => group.open);
+    if (openGroup) {
+      closeGroups();
+      openGroup.querySelector("summary")?.focus();
+      event.preventDefault();
+    } else if (navigation.classList.contains("open")) {
+      setMenuOpen(false);
+      toggle.focus();
+      event.preventDefault();
+    }
+  });
+
+  const normalizePath = (path) => path.replace(/\/index\.html$/, "/").replace(/\/+$/, "") || "/";
+  const currentPath = normalizePath(window.location.pathname);
+  header.querySelectorAll("a[href]").forEach((link) => {
+    const url = new URL(link.href, window.location.href);
+    const current = url.origin === window.location.origin && normalizePath(url.pathname) === currentPath;
+    if (current) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+  groups.forEach((group) => {
+    group.querySelector("summary")?.classList.toggle("has-current-page", Boolean(group.querySelector('[aria-current="page"]')));
+  });
+
+  const updateHeaderHeight = () => {
+    if (!top) return;
+    const style = getComputedStyle(top);
+    const rowItems = [...top.children].filter((child) => !mobile.matches || child !== navigation);
+    const rowHeight = Math.max(0, ...rowItems.map((child) => child.getBoundingClientRect().height));
+    const height = rowHeight + parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
+    const root = document.documentElement;
+    const currentHeight = parseFloat(getComputedStyle(root).getPropertyValue("--jj-header-height"));
+    if (height > 0 && (!Number.isFinite(currentHeight) || Math.abs(height - currentHeight) > 0.5)) {
+      root.style.setProperty("--jj-header-height", `${Math.ceil(height)}px`);
+    }
+  };
+
+  mobile.addEventListener("change", () => {
+    const focused = document.activeElement;
+    setMenuOpen(false);
+    // A hidden hamburger must not retain focus when returning to desktop.
+    if (!mobile.matches && focused === toggle) header.querySelector(".brand")?.focus();
+    updateHeaderHeight();
+  });
+  if (top && "ResizeObserver" in window) new ResizeObserver(updateHeaderHeight).observe(top);
+  window.addEventListener("resize", updateHeaderHeight, { passive: true });
+  updateHeaderHeight();
+})();
 
 //javascript for scroll to top button
 const scrollBtn = document.querySelector(".scrollToTop-btn");
 
-window.addEventListener("scroll", function () {
-  scrollBtn.classList.toggle("show", window.scrollY > 500);
-});
+if (scrollBtn) {
+  const updateScrollButton = () => scrollBtn.classList.toggle("show", window.scrollY > 500);
+  window.addEventListener("scroll", updateScrollButton, { passive: true });
+  updateScrollButton();
 
-//javascript for scroll back to top on on click scroll-to-top button
-scrollBtn.addEventListener("click", () => {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-});
+  //javascript for scroll back to top on on click scroll-to-top button
+  scrollBtn.addEventListener("click", () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+}
 
-//javascript for reveal website elements on scroll
-window.addEventListener("scroll", reveal);
+// Start revealing content just before it reaches the viewport.
+const revealAhead = 200;
+window.addEventListener("scroll", reveal, { passive: true });
+window.addEventListener("resize", reveal);
+window.addEventListener("load", reveal, { once: true });
+reveal();
 
 function reveal() {
-  var reveals = document.querySelectorAll(".reveal");
+  const reveals = document.querySelectorAll(".reveal:not(.active)");
+  const revealLimit = window.innerHeight + revealAhead;
 
-  for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
-    var revealTop = reveals[i].getBoundingClientRect().top;
-    var revealPoint = 50;
-
-    if (revealTop < windowHeight - revealPoint) {
-      reveals[i].classList.add("active");
+  for (const element of reveals) {
+    if (element.getBoundingClientRect().top < revealLimit) {
+      element.classList.add("active");
     }
   }
 }
 
-// navbar show on scroll to top and hide on down
-let lastScrollTop = 0;
-const navbar = document.querySelector(".header__nav");
-window.addEventListener("scroll", function () {
-  let scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-  if (scrollTop > lastScrollTop) {
-    navbar.style.top = "-200px";
-  } else {
-    navbar.style.top = "0";
-  }
-
-  if (window.scrollY > 0) {
-    navbar.style.background = "white";
-    navbar.style.boxShadow = "5px 10px 20px rgba(0, 0, 0, 0.25)";
-  } else {
-    navbar.style.background = "none";
-    navbar.style.boxShadow = "none";
-  }
-
-  lastScrollTop = scrollTop;
-});
-
-const openMenu = function () {
-  navigation.classList.toggle("active");
-  menu.classList.toggle("active");
-};
-
-// on click on menu link remove navigation active class
-linkMenu.forEach((link) =>
-  link.addEventListener("click", () => {
-    navigation.classList.remove("active");
-    menu.classList.remove("active");
-  })
-);
-
-menu.addEventListener("click", openMenu);
-
-const openModal = function () {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
-
-const closeModal = function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-};
-
-for (let i = 0; i < btnsOpenModal.length; i++) {
-  btnsOpenModal[i].addEventListener("click", function (e) {
-    //openModal
-    e.preventDefault();
-    modal.innerHTML = `
-    <button class="close-modal">&times;</button>
-    <div class="modal__main">
-      <div class="modal__main__image">
-        <img src="${modalContent[i].image}" alt="kategoria-b">
-      </div>
-      <div class="modal__main__title">
-        <h1 class="h1-primary">${modalContent[i].title}</h1>
-      </div>
-      
-      <div class="modal__main__text">
-        <p>
-        ${modalContent[i].text}
-        </p>
-      </div>
-      <div class="modal__main__list">
-        <ul>
-        ${modalContent[i].list
-          .map(
-            (item) =>
-              `<li><span>✅</span>
-            ${item}
-          </li>`
-          )
-          .join(" ")}
-        </ul>
-      </div>
-
-
-    </div>
-`;
-    document
-      .querySelector(".close-modal")
-      .addEventListener("click", closeModal);
-    modal.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-  });
-}
-
-overlay.addEventListener("click", closeModal);
-// overlay.addEventListener("click", );
-
-document.addEventListener("keydown", function (event) {
-  // Pokazuje ,ktory klawisz naciskamy
-  if (event.key === "Escape" && !modal.classList.contains("hidden")) {
-    closeModal();
-  }
-});
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 50.19097656879167, lng: 20.292741113753102 },
-    zoom: 16,
-    disableDefaultUI: true,
-  });
-
-  new google.maps.Marker({
-    // The below line is equivalent to writing:
-    // position: new google.maps.LatLng(-34.397, 150.644)
-    position: { lat: 50.19097656879167, lng: 20.292741113753102 },
-    map: map,
-  });
-}
-
 function initParadoxWay() {
-  if ($(".testimonials-carousel").length > 0) {
+  if (document.querySelector(".testimonials-carousel") && typeof window.Swiper === "function") {
     var j2 = new Swiper(".testimonials-carousel .swiper-container", {
       preloadImages: false,
       slidesPerView: 1,
@@ -216,6 +164,9 @@ function initParadoxWay() {
 }
 
 //   Init All ------------------
-$(document).ready(function () {
+// Deferred Swiper loads after this script and before DOMContentLoaded.
+if (document.readyState !== "complete") {
+  document.addEventListener("DOMContentLoaded", initParadoxWay, { once: true });
+} else {
   initParadoxWay();
-});
+}

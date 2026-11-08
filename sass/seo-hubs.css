@@ -1,0 +1,47 @@
+/* Strony zbiorcze oferty i lokalizacji. */
+.jj-hub-document .jj-hub { font-family:Poppins,sans-serif; letter-spacing:0; color:#132d77; }
+.jj-hub-document .jj-hub * { box-sizing:border-box; letter-spacing:0; }
+.jj-hub .hub-wrap { width:80%; max-width:1440px; margin-inline:auto; }
+.jj-hub .hub-hero { overflow:hidden; background:linear-gradient(120deg,#132d77,#1a54f0); padding:7rem 0; color:#fff; }
+.jj-hub .hub-hero .hub-wrap { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:6rem; align-items:center; }
+.jj-hub .hub-kicker { display:block; font-size:1.3rem; font-weight:600; text-transform:uppercase; letter-spacing:.12em; margin-bottom:1.6rem; color:#1a54f0; }
+.jj-hub .hub-hero .hub-kicker { color:#cfe0ff; }
+.jj-hub h1 { font-size:clamp(3.4rem,4.2vw,5.6rem); font-weight:300; line-height:1.15; margin:0 0 2.4rem; }
+.jj-hub h1 strong { display:block; font-weight:700; }
+.jj-hub p { font-size:1.6rem; line-height:1.8; margin:0 0 2rem; color:#5b6376; }
+.jj-hub .hub-hero p { color:#e2eaff; font-size:1.8rem; }
+.jj-hub .hub-photo { margin:0; aspect-ratio:4/3; overflow:hidden; border-radius:8px; }
+.jj-hub .hub-photo img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 42%; }
+.jj-hub .hub-photo--map { aspect-ratio:1376/768; background:#fff; }
+.jj-hub .hub-photo--map img { object-fit:contain; }
+.jj-hub .hub-actions { display:flex; flex-wrap:wrap; gap:1.6rem; margin-top:3rem; }
+.jj-hub .hub-button { display:inline-flex; justify-content:center; align-items:center; gap:1rem; padding:1.7rem 2.3rem; background:#1a54f0; color:#fff; font-size:1.5rem; line-height:1.5; font-weight:600; text-decoration:none; border:1px solid transparent; border-radius:4px; }
+.jj-hub .hub-button:hover { background:#132d77; }
+.jj-hub .hub-hero .hub-button, .jj-hub .hub-card--accent .hub-button { background:#fff; color:#132d77; }
+.jj-hub .hub-hero .hub-button:hover, .jj-hub .hub-card--accent .hub-button:hover { background:#e7efff; }
+.jj-hub .hub-hero .hub-button--ghost { background:transparent; color:#fff; border-color:rgba(255,255,255,.6); }
+.jj-hub .hub-section { padding:7rem 0; }
+.jj-hub .hub-section--soft { background:#f5f6fa; }
+.jj-hub .hub-heading { max-width:78rem; margin:0 auto 4rem; text-align:center; }
+.jj-hub h2 { font-size:clamp(2.8rem,3vw,3.8rem); line-height:1.25; font-weight:300; margin:0 0 2rem; }
+.jj-hub h2 strong { font-weight:700; }
+.jj-hub .hub-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:3rem; }
+.jj-hub .hub-card { display:flex; flex-direction:column; min-width:0; background:#fff; padding:3.5rem; border:1px solid #e3e8f3; border-radius:8px; box-shadow:0 12px 36px rgba(19,45,119,.08); }
+.jj-hub .hub-card .hub-kicker { font-size:1.2rem; margin-bottom:1rem; }
+.jj-hub .hub-card h3 { font-size:2.8rem; line-height:1.25; margin:0 0 1.5rem; font-weight:700; }
+.jj-hub .hub-card ul { margin:0 0 2.5rem; padding-left:2rem; color:#5b6376; font-size:1.5rem; line-height:1.8; }
+.jj-hub .hub-card .hub-button { align-self:flex-start; margin-top:auto; }
+.jj-hub .hub-card--accent { background:linear-gradient(135deg,#132d77,#1a54f0); border-color:transparent; color:#fff; }
+.jj-hub .hub-card--accent .hub-kicker,.jj-hub .hub-card--accent p,.jj-hub .hub-card--accent ul { color:#e2eaff; }
+.jj-hub .hub-note { max-width:86rem; margin:4rem auto 0; padding:2.5rem 3rem; background:#eef3ff; border-radius:8px; }
+.jj-hub .hub-note p:last-child { margin-bottom:0; }
+.jj-hub .hub-note a, .jj-hub .hub-contact a { color:#1a54f0; text-underline-offset:3px; }
+.jj-hub .hub-contact { max-width:86rem; }
+.jj-hub .hub-contact address { font-size:1.6rem; line-height:1.8; font-style:normal; color:#5b6376; margin:2rem 0; }
+.jj-hub .hub-quick-links { display:flex; flex-wrap:wrap; gap:1.5rem 2.5rem; padding:0; margin:2rem 0 0; list-style:none; }
+.jj-hub .hub-quick-links a { font-size:1.5rem; font-weight:600; color:#1a54f0; text-underline-offset:4px; }
+.jj-hub a:focus-visible { outline:3px solid #1a54f0; outline-offset:5px; }
+.jj-hub .hub-hero a:focus-visible,.jj-hub .hub-card--accent a:focus-visible { outline-color:#fff; }
+@media(max-width:1100px) { .jj-hub .hub-hero .hub-wrap { gap:3rem; } }
+@media(max-width:900px) { .jj-hub .hub-hero .hub-wrap { grid-template-columns:1fr; } .jj-hub .hub-photo { max-height:42rem; } }
+@media(max-width:700px) { .jj-hub .hub-wrap { width:88%; } .jj-hub .hub-hero,.jj-hub .hub-section { padding:5rem 0; } .jj-hub .hub-grid { grid-template-columns:1fr; gap:2rem; } .jj-hub .hub-card { padding:2.5rem; } .jj-hub .hub-note { padding:2rem; } .jj-hub .hub-actions .hub-button { width:100%; } }

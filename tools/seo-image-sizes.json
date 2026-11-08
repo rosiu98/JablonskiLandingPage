@@ -1,0 +1,346 @@
+{
+  "/images/21.jpg": {
+    "width": 234,
+    "height": 234
+  },
+  "/images/3.jpg": {
+    "width": 234,
+    "height": 234
+  },
+  "/images/4.jpg": {
+    "width": 234,
+    "height": 234
+  },
+  "/images/6.jpg": {
+    "width": 234,
+    "height": 234
+  },
+  "/images/about-photo-1.png": {
+    "width": 471,
+    "height": 313
+  },
+  "/images/about-photo-1.webp": {
+    "width": 471,
+    "height": 313
+  },
+  "/images/about-photo-2.png": {
+    "width": 472,
+    "height": 298
+  },
+  "/images/about-photo-2.webp": {
+    "width": 472,
+    "height": 298
+  },
+  "/images/android-chrome-192x192.png": {
+    "width": 192,
+    "height": 192
+  },
+  "/images/android-chrome-512x512.png": {
+    "width": 512,
+    "height": 512
+  },
+  "/images/apple-touch-icon.png": {
+    "width": 180,
+    "height": 180
+  },
+  "/images/arrow-left.png": {
+    "width": 35,
+    "height": 61
+  },
+  "/images/arrow-right.png": {
+    "width": 35,
+    "height": 61
+  },
+  "/images/arrow-top.svg": {
+    "width": 16,
+    "height": 9
+  },
+  "/images/auto-proszowice.webp": {
+    "width": 1440,
+    "height": 1040
+  },
+  "/images/auto-szkoleniowe.jpg": {
+    "width": 1800,
+    "height": 1800
+  },
+  "/images/box1.png": {
+    "width": 300,
+    "height": 164
+  },
+  "/images/box1.webp": {
+    "width": 300,
+    "height": 164
+  },
+  "/images/box2.png": {
+    "width": 300,
+    "height": 164
+  },
+  "/images/box2.webp": {
+    "width": 300,
+    "height": 164
+  },
+  "/images/box3.png": {
+    "width": 300,
+    "height": 164
+  },
+  "/images/box3.webp": {
+    "width": 300,
+    "height": 164
+  },
+  "/images/btn-menu.svg": {
+    "width": 47,
+    "height": 36
+  },
+  "/images/check-icon.png": {
+    "width": 17,
+    "height": 18
+  },
+  "/images/circles.svg": {
+    "width": 131,
+    "height": 126
+  },
+  "/images/close.svg": {
+    "width": 34,
+    "height": 34
+  },
+  "/images/details-photo1.png": {
+    "width": 232,
+    "height": 180
+  },
+  "/images/details-photo2.png": {
+    "width": 230,
+    "height": 180
+  },
+  "/images/details-photo3.png": {
+    "width": 230,
+    "height": 181
+  },
+  "/images/details-photo4.png": {
+    "width": 230,
+    "height": 180
+  },
+  "/images/favicon-16x16.png": {
+    "width": 16,
+    "height": 16
+  },
+  "/images/favicon-32x32.png": {
+    "width": 32,
+    "height": 32
+  },
+  "/images/favicon.ico": {
+    "width": 48,
+    "height": 48
+  },
+  "/images/header-bottom.svg": {
+    "width": 1440,
+    "height": 514
+  },
+  "/images/header-top.svg": {
+    "width": 951,
+    "height": 292
+  },
+  "/images/image-header.png": {
+    "width": 752,
+    "height": 868
+  },
+  "/images/image-header2.png": {
+    "width": 752,
+    "height": 868
+  },
+  "/images/jazdy-doszkalajace-02.webp": {
+    "width": 1600,
+    "height": 980
+  },
+  "/images/jazdy-doszkalajace-03.webp": {
+    "width": 1100,
+    "height": 1377
+  },
+  "/images/jazdy-doszkalajace-04.webp": {
+    "width": 960,
+    "height": 1440
+  },
+  "/images/jazdy-doszkalajace-05.webp": {
+    "width": 1150,
+    "height": 1440
+  },
+  "/images/jazdy-doszkalajace-06.webp": {
+    "width": 1440,
+    "height": 701
+  },
+  "/images/jazdy-doszkalajace-07.webp": {
+    "width": 1440,
+    "height": 927
+  },
+  "/images/jazdy-doszkalajace-08.webp": {
+    "width": 1002,
+    "height": 1440
+  },
+  "/images/jazdy-doszkalajace-09.webp": {
+    "width": 1190,
+    "height": 1440
+  },
+  "/images/jazdy-doszkalajace-10.webp": {
+    "width": 1058,
+    "height": 1440
+  },
+  "/images/jazdy-doszkalajace-11.webp": {
+    "width": 1440,
+    "height": 1333
+  },
+  "/images/jazdy-doszkalajace-12.webp": {
+    "width": 1440,
+    "height": 882
+  },
+  "/images/jazdy-doszkalajace-13.webp": {
+    "width": 1440,
+    "height": 1010
+  },
+  "/images/jazdy-doszkalajace-14.webp": {
+    "width": 1440,
+    "height": 1185
+  },
+  "/images/jazdy-doszkalajace-15.webp": {
+    "width": 1440,
+    "height": 960
+  },
+  "/images/jazdy-doszkalajace-16.webp": {
+    "width": 1440,
+    "height": 1385
+  },
+  "/images/jazdy-doszkalajace-17.webp": {
+    "width": 1184,
+    "height": 1440
+  },
+  "/images/jazdy-doszkalajace-18.webp": {
+    "width": 1440,
+    "height": 1040
+  },
+  "/images/jazdy-doszkalajace-19.webp": {
+    "width": 1043,
+    "height": 1440
+  },
+  "/images/jazdy-doszkalajace-20.webp": {
+    "width": 1440,
+    "height": 1012
+  },
+  "/images/jazdy-doszkalajace-21.webp": {
+    "width": 960,
+    "height": 1440
+  },
+  "/images/jazdy-doszkalajace-22.webp": {
+    "width": 960,
+    "height": 1440
+  },
+  "/images/jazdy-doszkalajace-23.webp": {
+    "width": 1440,
+    "height": 960
+  },
+  "/images/jazdy-doszkalajace-24.webp": {
+    "width": 1140,
+    "height": 1440
+  },
+  "/images/jerzy-instruktor.jpg": {
+    "width": 1280,
+    "height": 1920
+  },
+  "/images/jerzy-jablonski-krakow.webp": {
+    "width": 1440,
+    "height": 927
+  },
+  "/images/jerzy-jablonski-proszowice.webp": {
+    "width": 1440,
+    "height": 927
+  },
+  "/images/kategoria-b.jpg": {
+    "width": 640,
+    "height": 427
+  },
+  "/images/lekcja-krakow.webp": {
+    "width": 1440,
+    "height": 882
+  },
+  "/images/list-img.svg": {
+    "width": 23,
+    "height": 23
+  },
+  "/images/logo-white.svg": {
+    "width": 73,
+    "height": 58
+  },
+  "/images/Logo.svg": {
+    "width": 92,
+    "height": 73
+  },
+  "/images/mail.svg": {
+    "width": 41,
+    "height": 41
+  },
+  "/images/main-foto.png": {
+    "width": 740,
+    "height": 740
+  },
+  "/images/map-pin.svg": {
+    "width": 41,
+    "height": 41
+  },
+  "/images/mapa-krakow.jpg": {
+    "width": 1376,
+    "height": 768
+  },
+  "/images/mapa-obszar.jpg": {
+    "width": 1376,
+    "height": 768
+  },
+  "/images/mapa-proszowice.jpg": {
+    "width": 1376,
+    "height": 768
+  },
+  "/images/maskImage.svg": {
+    "width": 1524,
+    "height": 1629
+  },
+  "/images/mstile-150x150.png": {
+    "width": 270,
+    "height": 270
+  },
+  "/images/safari-pinned-tab.svg": {
+    "width": 981,
+    "height": 981
+  },
+  "/images/shadow.svg": {
+    "width": 488,
+    "height": 403
+  },
+  "/images/star.svg": {
+    "width": 23,
+    "height": 21
+  },
+  "/images/team-3.jpg": {
+    "width": 300,
+    "height": 300
+  },
+  "/images/telephone.svg": {
+    "width": 41,
+    "height": 41
+  },
+  "/images/wave-details.svg": {
+    "width": 1440,
+    "height": 645
+  },
+  "/images/wave-last.png": {
+    "width": 1440,
+    "height": 1024
+  },
+  "/images/wave-last.webp": {
+    "width": 1440,
+    "height": 1024
+  },
+  "/images/yaris.png": {
+    "width": 740,
+    "height": 554
+  },
+  "/images/yaris.webp": {
+    "width": 740,
+    "height": 554
+  }
+}

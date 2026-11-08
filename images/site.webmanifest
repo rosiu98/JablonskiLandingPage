@@ -1,6 +1,9 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Jerzy Jabłoński – Nauka Jazdy",
+    "short_name": "Nauka Jazdy",
+    "lang": "pl-PL",
+    "start_url": "/",
+    "scope": "/",
     "icons": [
         {
             "src": "/images/android-chrome-192x192.png",
@@ -13,7 +16,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#007aff",
     "background_color": "#ffffff",
     "display": "standalone"
 }

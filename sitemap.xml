@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://jablonski-naukajazdy.pl/</loc>
-  <lastmod>2024-09-27T01:49:21+00:00</lastmod>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://jablonski-naukajazdy.pl/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/nauka-jazdy/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/nauka-jazdy/kategoria-b/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/nauka-jazdy/kategoria-c/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/nauka-jazdy/kategoria-c-e/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/nauka-jazdy/jazdy-doszkalajace/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/lokalizacje/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/lokalizacje/nauka-jazdy-krakow/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/lokalizacje/nauka-jazdy-proszowice/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/o-mnie/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/cennik/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/opinie/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/faq/</loc></url>
+  <url><loc>https://jablonski-naukajazdy.pl/kontakt/</loc></url>
 </urlset>
