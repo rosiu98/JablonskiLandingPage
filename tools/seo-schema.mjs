@@ -56,6 +56,8 @@ const LABELS = {
   '/opinie/': 'Opinie',
   '/kontakt/': 'Kontakt',
   '/faq/': 'FAQ',
+  '/polityka-prywatnosci/': 'Polityka prywatności',
+  '/regulamin/': 'Regulamin panelu',
   '/nauka-jazdy/kategoria-b/': 'Kategoria B',
   '/nauka-jazdy/kategoria-c/': 'Kategoria C',
   '/nauka-jazdy/kategoria-c-e/': 'Kategoria C+E',

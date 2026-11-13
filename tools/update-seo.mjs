@@ -25,6 +25,17 @@ const footerLinks = [
   ['/o-mnie/', 'O mnie'], ['/cennik/', 'Cennik'], ['/opinie/', 'Opinie'], ['/faq/', 'FAQ'], ['/kontakt/', 'Kontakt'],
 ].map(([href, text]) => `<a href="${href}">${text}</a>`).join('\n              ');
 
+const legalFooter = `<!-- LEGAL-FOOTER:BEGIN -->
+<div class="footer__legal">
+  <nav aria-label="Dokumenty i panel rezerwacji" class="footer__legal-links">
+    <a href="/polityka-prywatnosci/">Polityka prywatności</a>
+    <a href="/regulamin/">Regulamin panelu</a>
+    <a href="https://jablonski-naukajazdy-panel.lovable.app/" target="_blank" rel="noopener noreferrer">Panel rezerwacji jazd <span aria-hidden="true">↗</span></a>
+  </nav>
+  <p>Panel rezerwacji jazd Jerzego Jabłońskiego służy zaproszonym kursantom do umawiania i odwoływania jazd oraz podglądu rozliczeń godzin. Instruktor zarządza terminami i może synchronizować rezerwacje z wybranym Google Calendar. Zasady integracji opisuje polityka prywatności.</p>
+</div>
+<!-- LEGAL-FOOTER:END -->`;
+
 // Read all inputs before writing, so a missing new page cannot leave a partial run.
 const documents = pages.map(page => ({ page, name: `${page.path.slice(1)}index.html`, html: read(`${page.path.slice(1)}index.html`) }));
 for (const { page, name, html: original } of documents) {
@@ -90,6 +101,8 @@ for (const { page, name, html: original } of documents) {
     return start + content + end;
   });
   html = html.replace(/(<div class="footer__about__links__content">)[\s\S]*?(<\/div>)/, `$1\n              ${footerLinks}\n            $2`);
+  html = html.replace(/<!-- LEGAL-FOOTER:BEGIN -->[\s\S]*?<!-- LEGAL-FOOTER:END -->\s*/g, '');
+  html = html.replace(/(<footer\b[^>]*>)([\s\S]*?)(<\/footer>)/i, (match, start, content, end) => `${start}${content.trimEnd()}\n${legalFooter}\n${end}`);
   if (!html.includes('class="footer__address"')) {
     html = html.replace(/(<div class="footer__location__map">)/, '<address class="footer__address">Bogusława Kleszczyńskiego 10<br>32-100 Proszowice</address>\n          $1');
   }
@@ -109,7 +122,7 @@ for (const { page, name, html: original } of documents) {
     }
     return result;
   });
-  html = html.replace(/(main\.css|script\.js)\?v=[^"']+/g, '$1?v=20261108-seo');
+  html = html.replace(/(main\.css|script\.js)\?v=[^"']+/g, '$1?v=20261113-legal');
   write(name, html);
 }
 

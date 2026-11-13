@@ -98,4 +98,18 @@ export const pages = [
     image: '/images/auto-szkoleniowe.jpg',
     imageAlt: 'Samochód do nauki jazdy Jerzego Jabłońskiego',
   },
+  {
+    path: '/polityka-prywatnosci/',
+    title: 'Polityka prywatności – strona i panel | Jerzy Jabłoński',
+    description: 'Zasady przetwarzania danych na stronie Jerzego Jabłońskiego i w panelu rezerwacji jazd. Kontakt, formularz, Google Calendar, przechowywanie danych i Twoje prawa.',
+    image: '/images/auto-szkoleniowe.jpg',
+    imageAlt: 'Nauka jazdy Jerzy Jabłoński – strona i panel rezerwacji',
+  },
+  {
+    path: '/regulamin/',
+    title: 'Regulamin panelu rezerwacji jazd | Jerzy Jabłoński',
+    description: 'Zasady korzystania z panelu rezerwacji jazd Jerzego Jabłońskiego: konto kursanta, terminy, odwołania, rozliczanie godzin, kontakt i reklamacje.',
+    image: '/images/auto-szkoleniowe.jpg',
+    imageAlt: 'Nauka jazdy Jerzy Jabłoński – panel rezerwacji jazd',
+  },
 ];

@@ -22,6 +22,7 @@ _redirects
 google3fb5f8cdd38d8d19.html
 sass/main.css
 sass/seo-hubs.css
+sass/legal.css
 images/                         wszystkie używane obrazy, ikony i manifest
 nauka-jazdy/index.html
 nauka-jazdy/kategoria-b/index.html
@@ -36,6 +37,8 @@ cennik/index.html
 opinie/index.html
 faq/index.html
 kontakt/index.html
+polityka-prywatnosci/index.html
+regulamin/index.html
 ```
 
 Plik `index.html` musi znajdować się bezpośrednio w katalogu publikacji. Pliki `.git`, lokalne konfiguracje, katalog `tools` i raporty robocze nie są potrzebne do działania strony; przygotowując folder do ręcznego wdrożenia, kopiuj pliki witryny z powyższej listy. CSS jest utrzymywany bezpośrednio w `sass/main.css`.
@@ -132,7 +135,9 @@ Dodawaj aktualne zdjęcia i odpowiadaj na prawdziwe opinie klientów. Wyniki lok
 
 ## 8. Dalsze aktualizacje treści i SEO
 
-Metadane wszystkich 14 stron są zapisane w `tools/seo-pages.mjs`, a reguły danych uporządkowanych w `tools/seo-schema.mjs`. Po zmianie tytułu, opisu lub obrazu uruchom w katalogu projektu `node tools/update-seo.mjs`. Narzędzie aktualizuje statyczny HTML, breadcrumbs, wspólne linki, `robots.txt`, `sitemap.xml` i `_redirects`. Obrazy i ich wymiary są opisane w `tools/seo-image-sizes.json`; po wymianie zdjęcia zaktualizuj również jego wymiary. Zwykła edycja treści pozostaje w odpowiednim pliku HTML. Przeglądarka nie uruchamia tych narzędzi — na hosting trafiają już gotowe pliki i nie trzeba instalować zależności Node do działania strony.
+Od 13 listopada 2026 r. mapa obejmuje również politykę prywatności i regulamin panelu — łącznie 16 stron. Przygotowanie aplikacji Calendar do Google OAuth opisuje osobny dokument [GOOGLE-OAUTH-WERYFIKACJA.md](GOOGLE-OAUTH-WERYFIKACJA.md); zgłoszenie mapy do Search Console nie zastępuje weryfikacji aplikacji.
+
+Metadane wszystkich 16 stron są zapisane w `tools/seo-pages.mjs`, a reguły danych uporządkowanych w `tools/seo-schema.mjs`. Po zmianie tytułu, opisu lub obrazu uruchom w katalogu projektu `node tools/update-seo.mjs`. Narzędzie aktualizuje statyczny HTML, breadcrumbs, wspólne linki, `robots.txt`, `sitemap.xml` i `_redirects`. Obrazy i ich wymiary są opisane w `tools/seo-image-sizes.json`; po wymianie zdjęcia zaktualizuj również jego wymiary. Zwykła edycja treści pozostaje w odpowiednim pliku HTML. Przeglądarka nie uruchamia tych narzędzi — na hosting trafiają już gotowe pliki i nie trzeba instalować zależności Node do działania strony.
 
 Aktualizuj opisy usług, informacje organizacyjne, rzeczywiste zdjęcia i dane kontaktowe. Nowe sekcje powinny odpowiadać na pytania kursantów, a strony lokalizacji wyjaśniać konkretne różnice w organizacji jazd. Mapa celowo nie zawiera opcjonalnego `lastmod`, aby nie podawać przypadkowych dat. Jeśli później dodasz to pole, wpisuj rzeczywistą datę istotnej aktualizacji danej strony. [Przygotowywanie mapy witryny](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap?hl=pl).
 
